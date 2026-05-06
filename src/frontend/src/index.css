@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.75rem;
+
+    --background: 0.08 0.01 270;
+    --foreground: 0.96 0.02 60;
+    --card: 0.14 0.015 270;
+    --card-foreground: 0.96 0.02 60;
+    --popover: 0.18 0.02 270;
+    --popover-foreground: 0.96 0.02 60;
+
+    --primary: 0.72 0.16 80;
+    --primary-foreground: 0.08 0.01 270;
+
+    --secondary: 0.22 0.02 270;
+    --secondary-foreground: 0.88 0.02 60;
+    --muted: 0.25 0.015 270;
+    --muted-foreground: 0.68 0.02 60;
+
+    --accent: 0.68 0.2 220;
+    --accent-foreground: 0.08 0.01 270;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.96 0.02 60;
+
+    --border: 0.22 0.02 270;
+    --input: 0.2 0.02 270;
+    --ring: 0.68 0.2 220;
+
+    --chart-1: 0.72 0.16 80;
+    --chart-2: 0.68 0.2 220;
+    --chart-3: 0.65 0.1 50;
+    --chart-4: 0.75 0.12 280;
+    --chart-5: 0.7 0.15 240;
+
+    --sidebar: 0.14 0.015 270;
+    --sidebar-foreground: 0.96 0.02 60;
+    --sidebar-primary: 0.72 0.16 80;
+    --sidebar-primary-foreground: 0.08 0.01 270;
+    --sidebar-accent: 0.25 0.015 270;
+    --sidebar-accent-foreground: 0.88 0.02 60;
+    --sidebar-border: 0.22 0.02 270;
+    --sidebar-ring: 0.68 0.2 220;
+  }
+
+  .dark {
+    --background: 0.08 0.01 270;
+    --foreground: 0.96 0.02 60;
+    --card: 0.14 0.015 270;
+    --card-foreground: 0.96 0.02 60;
+    --popover: 0.18 0.02 270;
+    --popover-foreground: 0.96 0.02 60;
+
+    --primary: 0.72 0.16 80;
+    --primary-foreground: 0.08 0.01 270;
+
+    --secondary: 0.22 0.02 270;
+    --secondary-foreground: 0.88 0.02 60;
+    --muted: 0.25 0.015 270;
+    --muted-foreground: 0.68 0.02 60;
+
+    --accent: 0.68 0.2 220;
+    --accent-foreground: 0.08 0.01 270;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.96 0.02 60;
+
+    --border: 0.22 0.02 270;
+    --input: 0.2 0.02 270;
+    --ring: 0.68 0.2 220;
+
+    --chart-1: 0.72 0.16 80;
+    --chart-2: 0.68 0.2 220;
+    --chart-3: 0.65 0.1 50;
+    --chart-4: 0.75 0.12 280;
+    --chart-5: 0.7 0.15 240;
+
+    --sidebar: 0.14 0.015 270;
+    --sidebar-foreground: 0.96 0.02 60;
+    --sidebar-primary: 0.72 0.16 80;
+    --sidebar-primary-foreground: 0.08 0.01 270;
+    --sidebar-accent: 0.25 0.015 270;
+    --sidebar-accent-foreground: 0.88 0.02 60;
+    --sidebar-border: 0.22 0.02 270;
+    --sidebar-ring: 0.68 0.2 220;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  @font-face {
+    font-family: "Space Grotesk";
+    src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+    font-weight: 400 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/assets/fonts/Inter.woff2") format("woff2");
+    font-weight: 400 500 600 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Geist Mono";
+    src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+    font-weight: 400 500;
+    font-display: swap;
+  }
+
+  .glow-blur {
+    filter: blur(80px);
+    opacity: 0.6;
+  }
+
+  .glow-subtle {
+    box-shadow: 0 0 60px oklch(var(--primary) / 0.25), 0 0 30px
+      oklch(var(--accent) / 0.15);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 80px oklch(var(--primary) / 0.3), inset 0 0 40px
+      oklch(var(--primary) / 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 60px oklch(var(--accent) / 0.35), 0 0 30px
+      oklch(var(--accent) / 0.2);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--background)),
+      oklch(0.12 0.015 270),
+      oklch(var(--background))
+    );
+  }
+
+  .glass-card {
+    background: oklch(var(--card) / 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid oklch(var(--primary) / 0.15);
+  }
+
+  .backdrop-frosted {
+    backdrop-filter: blur(12px);
+    background: oklch(var(--background) / 0.85);
+  }
+
+  .depth-card {
+    box-shadow: 0 10px 40px oklch(var(--foreground) / 0.08), 0 0 60px
+      oklch(var(--primary) / 0.1);
+  }
+
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(var(--primary) / 0.3),
+      transparent
+    );
+    animation: shine 3s infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(3deg);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 80px oklch(var(--primary) / 0.3), inset 0 0 40px
+        oklch(var(--primary) / 0.1);
+    }
+    50% {
+      box-shadow: 0 0 100px oklch(var(--primary) / 0.5), inset 0 0 50px
+        oklch(var(--primary) / 0.15);
+    }
+  }
+
+  @keyframes float-rotate {
+    0% {
+      transform: translateY(0) rotateZ(0deg);
+    }
+    50% {
+      transform: translateY(-30px) rotateZ(180deg);
+    }
+    100% {
+      transform: translateY(0) rotateZ(360deg);
+    }
+  }
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  display: inline-flex;
+  gap: 2rem;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}

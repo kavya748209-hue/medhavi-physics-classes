@@ -1,0 +1,21 @@
+{
+  "overview": "Premium 3D animated website for Medhavi Physics Classes by Er. Pooja Verma. Features a photo gallery, physics tips, admission info, and full course listings for Class 11, 12, NEET, and JEE.",
+  "features": [
+    "Gallery page with all 9 photos and lightbox viewer",
+    "Physics Tips & Exam Strategies page",
+    "Admission Process page with step-by-step guide",
+    "Multi-page SPA with dark navy + gold + cyan theme",
+    "3D animated sections throughout"
+  ],
+  "category": "education",
+  "tags": [
+    "physics",
+    "coaching",
+    "education",
+    "neet",
+    "jee",
+    "gallery",
+    "dark-theme"
+  ],
+  "last_updated": "2026-05-06T16:42:50.801Z"
+}

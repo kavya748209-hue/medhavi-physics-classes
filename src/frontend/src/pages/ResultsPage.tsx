@@ -156,7 +156,7 @@ export default function ResultsPage() {
       <PageNavbar />
 
       {/* Hero */}
-      <section className="relative py-32 px-4 text-center overflow-hidden">
+      <section className="relative pt-36 pb-24 px-4 text-center overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute top-0 left-1/4 w-72 h-72 rounded-full glow-blur"

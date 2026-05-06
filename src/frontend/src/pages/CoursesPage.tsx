@@ -127,7 +127,7 @@ export default function CoursesPage() {
       <PageNavbar />
 
       {/* Hero Banner */}
-      <section className="relative py-32 px-4 text-center overflow-hidden">
+      <section className="relative pt-36 pb-24 px-4 text-center overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute top-0 left-1/3 w-80 h-80 rounded-full glow-blur"

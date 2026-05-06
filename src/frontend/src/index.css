@@ -97,6 +97,9 @@
   }
   body {
     @apply bg-background text-foreground font-body antialiased;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    overscroll-behavior: none;
   }
 }
 
@@ -247,10 +250,32 @@
   .transition-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  /* Prevent hover-stuck states on touch devices */
+  @media (hover: none) {
+    .group:hover .group-hover\:opacity-100 {
+      opacity: 0 !important;
+    }
+    .group:hover .group-hover\:scale-110 {
+      transform: none !important;
+    }
+    a:hover,
+    button:hover {
+      transform: none !important;
+    }
+  }
+
+  /* Use hover-only effects only when hover is truly supported */
+  @media (hover: hover) {
+    .hover-lift:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+  }
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 @keyframes marquee {

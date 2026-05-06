@@ -8,12 +8,12 @@ const primaryNavLinks = [
   { label: "About", to: "/about" },
   { label: "Courses", to: "/courses" },
   { label: "Results", to: "/results" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "Study Materials", to: "/study-materials" },
-  { label: "Contact", to: "/#contact" },
+  { label: "Gallery", to: "/gallery", highlight: true },
 ];
 
 const moreNavLinks = [
+  { label: "Study Materials", to: "/study-materials" },
+  { label: "Contact", to: "/#contact" },
   { label: "Physics Tips", to: "/physics-tips" },
   { label: "Admission", to: "/admission" },
 ];
@@ -38,16 +38,36 @@ export function PageNavbar() {
     return () => window.removeEventListener("popstate", handlePop);
   }, []);
 
-  // Close "More" dropdown on outside click
+  // Close "More" dropdown on outside click or touch
   useEffect(() => {
     if (!moreOpen) return;
-    const handler = (e: MouseEvent) => {
+    const handler = (e: MouseEvent | TouchEvent) => {
       const target = e.target as HTMLElement;
       if (!target.closest("[data-more-menu]")) setMoreOpen(false);
     };
     document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler, { passive: true });
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
   }, [moreOpen]);
+
+  // Close mobile menu on outside tap
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: TouchEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        !target.closest("[data-mobile-menu]") &&
+        !target.closest("[data-ocid='navbar.hamburger_button']")
+      ) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("touchstart", handler, { passive: true });
+    return () => document.removeEventListener("touchstart", handler);
+  }, [open]);
 
   const navigate = useCallback((to: string) => {
     setOpen(false);
@@ -75,9 +95,9 @@ export function PageNavbar() {
   return (
     <nav
       data-ocid="navbar"
-      className={`fixed top-0 left-0 right-0 z-40 transition-smooth ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-frosted border-b border-border/60 shadow-lg"
+          ? "backdrop-blur-md bg-[oklch(0.08_0.02_250/0.95)] border-b border-[oklch(0.72_0.18_80/0.3)] shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -112,9 +132,13 @@ export function PageNavbar() {
                 onClick={() => navigate(link.to)}
                 data-ocid={`navbar.${link.label.toLowerCase().replace(/ /g, "_")}_link`}
                 className={`px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${
-                  currentPath === link.to
-                    ? "text-accent bg-primary/10"
-                    : "text-foreground/80 hover:text-accent hover:bg-primary/10"
+                  link.highlight
+                    ? currentPath === link.to
+                      ? "text-primary bg-primary/20 ring-1 ring-primary/60 font-semibold"
+                      : "text-primary bg-primary/10 ring-1 ring-primary/30 font-semibold hover:bg-primary/20 hover:ring-primary/60"
+                    : currentPath === link.to
+                      ? "text-accent bg-primary/10"
+                      : "text-foreground/80 hover:text-accent hover:bg-primary/10"
                 }`}
               >
                 {link.label}
@@ -190,35 +214,43 @@ export function PageNavbar() {
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div
-          data-ocid="navbar.mobile_menu"
-          className="md:hidden backdrop-frosted border-t border-border/40 px-4 pb-4"
-        >
-          {allMobileLinks.map((link) => (
-            <button
-              key={link.to}
-              type="button"
-              onClick={() => navigate(link.to)}
-              className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${
-                currentPath === link.to
+      <div
+        data-ocid="navbar.mobile_menu"
+        data-mobile-menu
+        className={`md:hidden backdrop-frosted border-t border-border/40 px-4 pb-4 overflow-hidden transition-all duration-300 ease-in-out ${
+          open
+            ? "max-h-screen opacity-100"
+            : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        {allMobileLinks.map((link) => (
+          <button
+            key={link.to}
+            type="button"
+            onClick={() => navigate(link.to)}
+            data-ocid={`navbar.${link.label.toLowerCase().replace(/ /g, "_")}_mobile_link`}
+            className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${
+              "highlight" in link && link.highlight
+                ? currentPath === link.to
+                  ? "text-primary bg-primary/20 ring-1 ring-primary/40 font-semibold"
+                  : "text-primary font-semibold hover:bg-primary/15"
+                : currentPath === link.to
                   ? "text-accent bg-primary/10"
                   : "text-foreground/80 hover:text-accent hover:bg-primary/10"
-              }`}
-            >
-              {link.label}
-            </button>
-          ))}
-          <a
-            href="https://wa.me/919897085277"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block mt-2 px-4 py-3 text-sm font-semibold text-white text-center bg-gradient-to-r from-accent to-primary rounded-xl"
+            }`}
           >
-            Enroll Now
-          </a>
-        </div>
-      )}
+            {link.label}
+          </button>
+        ))}
+        <a
+          href="https://wa.me/919897085277"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block mt-2 px-4 py-3 text-sm font-semibold text-white text-center bg-gradient-to-r from-accent to-primary rounded-xl"
+        >
+          Enroll Now
+        </a>
+      </div>
     </nav>
   );
 }

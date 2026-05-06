@@ -7,6 +7,7 @@ import CoursesPage from "@/pages/CoursesPage";
 import { FAQSection } from "@/pages/FAQSection";
 import { Footer } from "@/pages/Footer";
 import GalleryPage from "@/pages/GalleryPage";
+import { GallerySection } from "@/pages/GallerySection";
 import { HeroSection } from "@/pages/HeroSection";
 import { PhysicsQuotesSection } from "@/pages/PhysicsQuotesSection";
 import PhysicsTipsPage from "@/pages/PhysicsTipsPage";
@@ -29,6 +30,7 @@ function HomePage() {
       <ReviewsSection />
       <PhysicsQuotesSection />
       <FAQSection />
+      <GallerySection />
       <ContactSection />
       <Footer />
       <FloatingButtons />

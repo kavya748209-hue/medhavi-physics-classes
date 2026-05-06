@@ -18528,13 +18528,18 @@ function FloatingButtons() {
         rel: "noopener noreferrer",
         "data-ocid": "floating.instagram_button",
         "aria-label": "Follow on Instagram",
-        className: "fixed bottom-6 left-6 z-50 flex items-center gap-2 px-4 py-3 rounded-full text-white font-semibold text-sm shadow-xl transition-smooth hover:scale-110 animate-glow-pulse",
+        className: "fixed bottom-6 left-6 z-50 flex items-center gap-2 px-4 rounded-full text-white font-semibold text-sm shadow-xl transition-smooth animate-glow-pulse",
         style: {
+          minWidth: 56,
+          minHeight: 56,
+          height: 56,
+          paddingLeft: 16,
+          paddingRight: 16,
           background: "linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
           boxShadow: "0 4px 24px rgba(220,39,67,0.45)"
         },
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(SiInstagram, { className: "w-5 h-5" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SiInstagram, { className: "w-5 h-5 flex-shrink-0" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden sm:inline", children: "Instagram" })
         ]
       }
@@ -18547,13 +18552,18 @@ function FloatingButtons() {
         rel: "noopener noreferrer",
         "data-ocid": "floating.whatsapp_button",
         "aria-label": "Chat on WhatsApp",
-        className: "fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-full text-white font-semibold text-sm shadow-xl transition-smooth hover:scale-110 animate-glow-pulse",
+        className: "fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 rounded-full text-white font-semibold text-sm shadow-xl transition-smooth animate-glow-pulse",
         style: {
+          minWidth: 56,
+          minHeight: 56,
+          height: 56,
+          paddingLeft: 16,
+          paddingRight: 16,
           background: "linear-gradient(135deg, #25d366 0%, #128c7e 100%)",
           boxShadow: "0 4px 24px rgba(37,211,102,0.45)"
         },
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(SiWhatsapp, { className: "w-5 h-5" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SiWhatsapp, { className: "w-5 h-5 flex-shrink-0" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden sm:inline", children: "WhatsApp" })
         ]
       }
@@ -19186,11 +19196,11 @@ const primaryNavLinks = [
   { label: "About", to: "/about" },
   { label: "Courses", to: "/courses" },
   { label: "Results", to: "/results" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "Study Materials", to: "/study-materials" },
-  { label: "Contact", to: "/#contact" }
+  { label: "Gallery", to: "/gallery", highlight: true }
 ];
 const moreNavLinks = [
+  { label: "Study Materials", to: "/study-materials" },
+  { label: "Contact", to: "/#contact" },
   { label: "Physics Tips", to: "/physics-tips" },
   { label: "Admission", to: "/admission" }
 ];
@@ -19217,8 +19227,23 @@ function PageNavbar() {
       if (!target.closest("[data-more-menu]")) setMoreOpen(false);
     };
     document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler, { passive: true });
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
   }, [moreOpen]);
+  reactExports.useEffect(() => {
+    if (!open) return;
+    const handler = (e) => {
+      const target = e.target;
+      if (!target.closest("[data-mobile-menu]") && !target.closest("[data-ocid='navbar.hamburger_button']")) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("touchstart", handler, { passive: true });
+    return () => document.removeEventListener("touchstart", handler);
+  }, [open]);
   const navigate = reactExports.useCallback((to) => {
     var _a2, _b2, _c2;
     setOpen(false);
@@ -19247,7 +19272,7 @@ function PageNavbar() {
     "nav",
     {
       "data-ocid": "navbar",
-      className: `fixed top-0 left-0 right-0 z-40 transition-smooth ${scrolled ? "backdrop-frosted border-b border-border/60 shadow-lg" : "bg-transparent"}`,
+      className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "backdrop-blur-md bg-[oklch(0.08_0.02_250/0.95)] border-b border-[oklch(0.72_0.18_80/0.3)] shadow-lg" : "bg-transparent"}`,
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between h-16 lg:h-20", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -19273,7 +19298,7 @@ function PageNavbar() {
                 type: "button",
                 onClick: () => navigate(link.to),
                 "data-ocid": `navbar.${link.label.toLowerCase().replace(/ /g, "_")}_link`,
-                className: `px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${currentPath === link.to ? "text-accent bg-primary/10" : "text-foreground/80 hover:text-accent hover:bg-primary/10"}`,
+                className: `px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${link.highlight ? currentPath === link.to ? "text-primary bg-primary/20 ring-1 ring-primary/60 font-semibold" : "text-primary bg-primary/10 ring-1 ring-primary/30 font-semibold hover:bg-primary/20 hover:ring-primary/60" : currentPath === link.to ? "text-accent bg-primary/10" : "text-foreground/80 hover:text-accent hover:bg-primary/10"}`,
                 children: link.label
               },
               link.to
@@ -19340,18 +19365,20 @@ function PageNavbar() {
             }
           )
         ] }) }),
-        open && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
             "data-ocid": "navbar.mobile_menu",
-            className: "md:hidden backdrop-frosted border-t border-border/40 px-4 pb-4",
+            "data-mobile-menu": true,
+            className: `md:hidden backdrop-frosted border-t border-border/40 px-4 pb-4 overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-screen opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`,
             children: [
               allMobileLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "button",
                 {
                   type: "button",
                   onClick: () => navigate(link.to),
-                  className: `block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${currentPath === link.to ? "text-accent bg-primary/10" : "text-foreground/80 hover:text-accent hover:bg-primary/10"}`,
+                  "data-ocid": `navbar.${link.label.toLowerCase().replace(/ /g, "_")}_mobile_link`,
+                  className: `block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${"highlight" in link && link.highlight ? currentPath === link.to ? "text-primary bg-primary/20 ring-1 ring-primary/40 font-semibold" : "text-primary font-semibold hover:bg-primary/15" : currentPath === link.to ? "text-accent bg-primary/10" : "text-foreground/80 hover:text-accent hover:bg-primary/10"}`,
                   children: link.label
                 },
                 link.to
@@ -31922,7 +31949,7 @@ const comparison = [
 function CoursesPage() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen bg-background", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(PageNavbar, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative py-32 px-4 text-center overflow-hidden", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative pt-36 pb-24 px-4 text-center overflow-hidden", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 pointer-events-none", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
@@ -32384,16 +32411,28 @@ function FAQSection() {
     }
   );
 }
-const PHOTOS = [
-  { src: "/assets/photo1.png", key: "photo-1", label: "Photo 1" },
-  { src: "/assets/photo2.png", key: "photo-2", label: "Photo 2" },
-  { src: "/assets/photo3.png", key: "photo-3", label: "Photo 3" },
-  { src: "/assets/photo4.png", key: "photo-4", label: "Photo 4" },
-  { src: "/assets/photo5.png", key: "photo-5", label: "Photo 5" },
-  { src: "/assets/photo6.png", key: "photo-6", label: "Photo 6" },
-  { src: "/assets/photo7.png", key: "photo-7", label: "Photo 7" },
-  { src: "/assets/photo8.png", key: "photo-8", label: "Photo 8" },
-  { src: "/assets/photo9.png", key: "photo-9", label: "Photo 9" }
+const PHOTOS$1 = [
+  { src: "/assets/photo1.png", key: "photo-1", label: "Classroom Session" },
+  { src: "/assets/photo2.png", key: "photo-2", label: "Students at Work" },
+  { src: "/assets/photo3.png", key: "photo-3", label: "Toppers Celebration" },
+  { src: "/assets/photo4.png", key: "photo-4", label: "Study Group" },
+  { src: "/assets/photo5.png", key: "photo-5", label: "Batch Photo" },
+  { src: "/assets/photo6.png", key: "photo-6", label: "Achievement Ceremony" },
+  { src: "/assets/photo7.png", key: "photo-7", label: "Special Event" },
+  { src: "/assets/photo8.png", key: "photo-8", label: "Lab Session" },
+  { src: "/assets/photo9.png", key: "photo-9", label: "Prize Distribution" },
+  { src: "/assets/photo10.png", key: "photo-10", label: "Annual Function" },
+  { src: "/assets/photo11.png", key: "photo-11", label: "Result Announcement" },
+  { src: "/assets/photo12.png", key: "photo-12", label: "Interactive Lecture" },
+  { src: "/assets/photo13.png", key: "photo-13", label: "Topper Felicitation" },
+  { src: "/assets/photo14.png", key: "photo-14", label: "Group Study" },
+  { src: "/assets/photo15.png", key: "photo-15", label: "Demo Experiment" },
+  { src: "/assets/photo16.png", key: "photo-16", label: "JEE Batch Gathering" },
+  {
+    src: "/assets/photo17.png",
+    key: "photo-17",
+    label: "Felicitation Ceremony"
+  }
 ];
 function useIntersectionObserver() {
   const refs = reactExports.useRef(/* @__PURE__ */ new Map());
@@ -32421,7 +32460,7 @@ function useIntersectionObserver() {
   }, []);
   return { visible, setRef: setRef2 };
 }
-function PhotoCard({
+function PhotoCard$1({
   photo,
   index: index2,
   isVisible,
@@ -32501,14 +32540,15 @@ function PhotoCard({
     }
   );
 }
-function Lightbox({
+function Lightbox$1({
   open,
   index: index2,
   onClose,
   onPrev,
   onNext
 }) {
-  const photo = PHOTOS[index2];
+  const photo = PHOTOS$1[index2];
+  const touchStartX = reactExports.useRef(null);
   reactExports.useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -32526,6 +32566,17 @@ function Lightbox({
     return () => window.removeEventListener("keydown", handler);
   }, [open, onClose, onPrev, onNext]);
   if (!open) return null;
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(delta) < 50) return;
+    if (delta < 0) onNext();
+    else onPrev();
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
@@ -32538,6 +32589,8 @@ function Lightbox({
         alignItems: "center",
         justifyContent: "center"
       },
+      onTouchStart: handleTouchStart,
+      onTouchEnd: handleTouchEnd,
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
@@ -32570,7 +32623,9 @@ function Lightbox({
               border: "none",
               padding: 0,
               margin: 0,
-              overflow: "visible"
+              overflow: "visible",
+              width: "100%",
+              maxWidth: "min(90vw, 900px)"
             },
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -32580,8 +32635,12 @@ function Lightbox({
                   onClick: onClose,
                   "data-ocid": "gallery.lightbox_close_button",
                   "aria-label": "Close lightbox",
-                  className: "absolute top-5 right-5 z-10 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2",
+                  className: "absolute top-3 right-3 sm:top-5 sm:right-5 z-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2",
                   style: {
+                    width: 48,
+                    height: 48,
+                    minWidth: 48,
+                    minHeight: 48,
                     background: "oklch(0.14 0.015 270 / 0.9)",
                     border: "1px solid oklch(0.72 0.16 80 / 0.4)",
                     color: "oklch(0.96 0.02 60)",
@@ -32600,8 +32659,12 @@ function Lightbox({
                   },
                   "data-ocid": "gallery.lightbox_prev_button",
                   "aria-label": "Previous photo",
-                  className: "absolute left-4 z-10 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2",
+                  className: "absolute left-2 sm:left-4 z-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2",
                   style: {
+                    width: 48,
+                    height: 48,
+                    minWidth: 48,
+                    minHeight: 48,
                     background: "oklch(0.14 0.015 270 / 0.9)",
                     border: "1px solid oklch(0.68 0.2 220 / 0.4)",
                     color: "oklch(0.96 0.02 60)",
@@ -32620,8 +32683,12 @@ function Lightbox({
                   },
                   "data-ocid": "gallery.lightbox_next_button",
                   "aria-label": "Next photo",
-                  className: "absolute right-4 z-10 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2",
+                  className: "absolute right-2 sm:right-4 z-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2",
                   style: {
+                    width: 48,
+                    height: 48,
+                    minWidth: 48,
+                    minHeight: 48,
                     background: "oklch(0.14 0.015 270 / 0.9)",
                     border: "1px solid oklch(0.68 0.2 220 / 0.4)",
                     color: "oklch(0.96 0.02 60)",
@@ -32633,18 +32700,17 @@ function Lightbox({
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
                 {
-                  className: "relative z-10 flex flex-col items-center gap-4",
-                  style: { maxWidth: "min(90vw, 900px)", maxHeight: "90vh" },
+                  className: "relative z-10 flex flex-col items-center gap-4 px-16",
+                  style: { width: "100%" },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "img",
                       {
                         src: photo == null ? void 0 : photo.src,
                         alt: photo == null ? void 0 : photo.label,
-                        className: "rounded-2xl object-contain shadow-2xl",
+                        className: "rounded-2xl object-contain shadow-2xl w-full",
                         style: {
-                          maxWidth: "100%",
-                          maxHeight: "75vh",
+                          maxHeight: "72vh",
                           border: "1px solid oklch(0.72 0.16 80 / 0.3)",
                           boxShadow: "0 0 60px oklch(0.72 0.16 80 / 0.18), 0 0 120px oklch(0.68 0.2 220 / 0.10)"
                         }
@@ -32654,7 +32720,7 @@ function Lightbox({
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         "span",
                         {
-                          className: "text-base font-semibold",
+                          className: "text-sm sm:text-base font-semibold",
                           style: { color: "oklch(0.72 0.16 80)" },
                           children: photo == null ? void 0 : photo.label
                         }
@@ -32662,7 +32728,7 @@ function Lightbox({
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-muted-foreground text-sm", children: [
                         index2 + 1,
                         " / ",
-                        PHOTOS.length
+                        PHOTOS$1.length
                       ] })
                     ] })
                   ]
@@ -32685,11 +32751,11 @@ function GalleryPage() {
   }, []);
   const closeLightbox = reactExports.useCallback(() => setLightboxOpen(false), []);
   const prevPhoto = reactExports.useCallback(
-    () => setLightboxIndex((i2) => (i2 - 1 + PHOTOS.length) % PHOTOS.length),
+    () => setLightboxIndex((i2) => (i2 - 1 + PHOTOS$1.length) % PHOTOS$1.length),
     []
   );
   const nextPhoto = reactExports.useCallback(
-    () => setLightboxIndex((i2) => (i2 + 1) % PHOTOS.length),
+    () => setLightboxIndex((i2) => (i2 + 1) % PHOTOS$1.length),
     []
   );
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen bg-background", children: [
@@ -32789,8 +32855,8 @@ function GalleryPage() {
         "data-ocid": "gallery.section",
         className: "pb-20 px-4 sm:px-8 max-w-7xl mx-auto",
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5", children: PHOTOS.map((photo, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-            PhotoCard,
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5", children: PHOTOS$1.map((photo, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            PhotoCard$1,
             {
               photo,
               index: index2,
@@ -32800,7 +32866,7 @@ function GalleryPage() {
             },
             photo.key
           )) }),
-          PHOTOS.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PHOTOS$1.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
             "div",
             {
               "data-ocid": "gallery.empty_state",
@@ -32814,7 +32880,7 @@ function GalleryPage() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FloatingButtons, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Lightbox,
+      Lightbox$1,
       {
         open: lightboxOpen,
         index: lightboxIndex,
@@ -32824,6 +32890,490 @@ function GalleryPage() {
       }
     )
   ] });
+}
+const PHOTOS = [
+  { src: "/assets/photo1.png", key: "gs-1", label: "Classroom Session" },
+  { src: "/assets/photo2.png", key: "gs-2", label: "Students at Work" },
+  { src: "/assets/photo3.png", key: "gs-3", label: "Toppers Celebration" },
+  { src: "/assets/photo4.png", key: "gs-4", label: "Study Group" },
+  { src: "/assets/photo5.png", key: "gs-5", label: "Batch Photo" },
+  { src: "/assets/photo6.png", key: "gs-6", label: "Achievement Ceremony" },
+  { src: "/assets/photo7.png", key: "gs-7", label: "Special Event" },
+  { src: "/assets/photo8.png", key: "gs-8", label: "Lab Session" },
+  { src: "/assets/photo9.png", key: "gs-9", label: "Prize Distribution" },
+  { src: "/assets/photo10.png", key: "gs-10", label: "Annual Function" },
+  { src: "/assets/photo11.png", key: "gs-11", label: "Result Announcement" },
+  { src: "/assets/photo12.png", key: "gs-12", label: "Interactive Lecture" },
+  { src: "/assets/photo13.png", key: "gs-13", label: "Topper Felicitation" },
+  { src: "/assets/photo14.png", key: "gs-14", label: "Group Study" },
+  { src: "/assets/photo15.png", key: "gs-15", label: "Demo Experiment" },
+  { src: "/assets/photo16.png", key: "gs-16", label: "JEE Batch Gathering" },
+  { src: "/assets/photo17.png", key: "gs-17", label: "Felicitation Ceremony" }
+];
+function useScrollVisible() {
+  const refs = reactExports.useRef(/* @__PURE__ */ new Map());
+  const [visible, setVisible] = reactExports.useState(/* @__PURE__ */ new Set());
+  reactExports.useEffect(() => {
+    const observer2 = new IntersectionObserver(
+      (entries) => {
+        setVisible((prev) => {
+          const next = new Set(prev);
+          for (const entry of entries) {
+            const key = entry.target.getAttribute("data-key");
+            if (key && entry.isIntersecting) next.add(key);
+          }
+          return next;
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+    for (const el of refs.current.values()) observer2.observe(el);
+    return () => observer2.disconnect();
+  }, []);
+  const setRef2 = reactExports.useCallback((key, el) => {
+    if (el) refs.current.set(key, el);
+    else refs.current.delete(key);
+  }, []);
+  return { visible, setRef: setRef2 };
+}
+function PhotoCard({
+  photo,
+  index: index2,
+  isVisible,
+  onOpen,
+  setRef: setRef2
+}) {
+  const delay2 = index2 % 8 * 0.06;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "button",
+    {
+      type: "button",
+      ref: (el) => setRef2(photo.key, el),
+      "data-key": photo.key,
+      "data-ocid": `home_gallery.item.${index2 + 1}`,
+      onClick: () => onOpen(index2),
+      "aria-label": `Open ${photo.label} in lightbox`,
+      className: "group relative cursor-pointer rounded-2xl overflow-hidden text-left w-full",
+      style: {
+        aspectRatio: "1 / 1",
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0) scale(1)" : "translateY(36px) scale(0.96)",
+        transition: `opacity 0.55s ease ${delay2}s, transform 0.55s ease ${delay2}s`,
+        background: "transparent",
+        border: "none",
+        padding: 0
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "absolute inset-0 rounded-2xl z-10 pointer-events-none",
+            style: { boxShadow: "0 0 0 1px oklch(0.72 0.16 80 / 0.18)" }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "absolute inset-0 rounded-2xl z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+            style: {
+              boxShadow: "0 0 0 2px oklch(0.72 0.16 80 / 0.7), 0 0 28px 4px oklch(0.72 0.16 80 / 0.22)"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "img",
+          {
+            src: photo.src,
+            alt: photo.label,
+            className: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110",
+            loading: "lazy"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4 z-20", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              className: "text-sm font-semibold tracking-wide",
+              style: { color: "oklch(0.72 0.16 80)" },
+              children: photo.label
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              className: "text-xs px-2 py-1 rounded-full border",
+              style: {
+                borderColor: "oklch(0.68 0.2 220 / 0.6)",
+                color: "oklch(0.68 0.2 220)",
+                background: "oklch(0.08 0.01 270 / 0.6)"
+              },
+              children: "View"
+            }
+          )
+        ] })
+      ]
+    }
+  );
+}
+function Lightbox({
+  open,
+  index: index2,
+  onClose,
+  onPrev,
+  onNext
+}) {
+  const photo = PHOTOS[index2];
+  const touchStartX = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+  reactExports.useEffect(() => {
+    if (!open) return;
+    const handler = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open, onClose, onPrev, onNext]);
+  if (!open) return null;
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(delta) < 50) return;
+    if (delta < 0) onNext();
+    else onPrev();
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      "data-ocid": "home_gallery.lightbox",
+      style: {
+        position: "fixed",
+        inset: 0,
+        zIndex: 9999,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      },
+      onTouchStart: handleTouchStart,
+      onTouchEnd: handleTouchEnd,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            onClick: onClose,
+            onKeyDown: (e) => e.key === "Enter" && onClose(),
+            role: "presentation",
+            style: {
+              position: "absolute",
+              inset: 0,
+              background: "oklch(0.05 0.01 270 / 0.92)",
+              backdropFilter: "blur(12px)",
+              cursor: "pointer"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "dialog",
+          {
+            open: true,
+            "aria-label": `Lightbox: ${(photo == null ? void 0 : photo.label) ?? ""}`,
+            style: {
+              position: "relative",
+              zIndex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "transparent",
+              border: "none",
+              padding: 0,
+              margin: 0,
+              overflow: "visible",
+              width: "100%",
+              maxWidth: "min(90vw, 900px)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: onClose,
+                  "data-ocid": "home_gallery.lightbox_close_button",
+                  "aria-label": "Close lightbox",
+                  className: "absolute top-3 right-3 sm:top-5 sm:right-5 z-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2",
+                  style: {
+                    width: 48,
+                    height: 48,
+                    minWidth: 48,
+                    minHeight: 48,
+                    background: "oklch(0.14 0.015 270 / 0.9)",
+                    border: "1px solid oklch(0.72 0.16 80 / 0.4)",
+                    color: "oklch(0.96 0.02 60)",
+                    boxShadow: "0 0 16px oklch(0.72 0.16 80 / 0.15)"
+                  },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { className: "w-5 h-5" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: (e) => {
+                    e.stopPropagation();
+                    onPrev();
+                  },
+                  "data-ocid": "home_gallery.lightbox_prev_button",
+                  "aria-label": "Previous photo",
+                  className: "absolute left-2 sm:left-4 z-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2",
+                  style: {
+                    width: 48,
+                    height: 48,
+                    minWidth: 48,
+                    minHeight: 48,
+                    background: "oklch(0.14 0.015 270 / 0.9)",
+                    border: "1px solid oklch(0.68 0.2 220 / 0.4)",
+                    color: "oklch(0.96 0.02 60)",
+                    boxShadow: "0 0 16px oklch(0.68 0.2 220 / 0.15)"
+                  },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { className: "w-6 h-6" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: (e) => {
+                    e.stopPropagation();
+                    onNext();
+                  },
+                  "data-ocid": "home_gallery.lightbox_next_button",
+                  "aria-label": "Next photo",
+                  className: "absolute right-2 sm:right-4 z-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2",
+                  style: {
+                    width: 48,
+                    height: 48,
+                    minWidth: 48,
+                    minHeight: 48,
+                    background: "oklch(0.14 0.015 270 / 0.9)",
+                    border: "1px solid oklch(0.68 0.2 220 / 0.4)",
+                    color: "oklch(0.96 0.02 60)",
+                    boxShadow: "0 0 16px oklch(0.68 0.2 220 / 0.15)"
+                  },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-6 h-6" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "relative z-10 flex flex-col items-center gap-4 px-16",
+                  style: { width: "100%" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "img",
+                      {
+                        src: photo == null ? void 0 : photo.src,
+                        alt: photo == null ? void 0 : photo.label,
+                        className: "rounded-2xl object-contain shadow-2xl w-full",
+                        style: {
+                          maxHeight: "72vh",
+                          border: "1px solid oklch(0.72 0.16 80 / 0.3)",
+                          boxShadow: "0 0 60px oklch(0.72 0.16 80 / 0.18), 0 0 120px oklch(0.68 0.2 220 / 0.10)"
+                        }
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "span",
+                        {
+                          className: "text-sm sm:text-base font-semibold",
+                          style: { color: "oklch(0.72 0.16 80)" },
+                          children: photo == null ? void 0 : photo.label
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-muted-foreground text-sm", children: [
+                        index2 + 1,
+                        " / ",
+                        PHOTOS.length
+                      ] })
+                    ] })
+                  ]
+                }
+              )
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
+function GallerySection() {
+  const [lightboxOpen, setLightboxOpen] = reactExports.useState(false);
+  const [lightboxIndex, setLightboxIndex] = reactExports.useState(0);
+  const { visible, setRef: setRef2 } = useScrollVisible();
+  const openLightbox = reactExports.useCallback((idx) => {
+    setLightboxIndex(idx);
+    setLightboxOpen(true);
+  }, []);
+  const closeLightbox = reactExports.useCallback(() => setLightboxOpen(false), []);
+  const prevPhoto = reactExports.useCallback(
+    () => setLightboxIndex((i2) => (i2 - 1 + PHOTOS.length) % PHOTOS.length),
+    []
+  );
+  const nextPhoto = reactExports.useCallback(
+    () => setLightboxIndex((i2) => (i2 + 1) % PHOTOS.length),
+    []
+  );
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "section",
+    {
+      id: "gallery",
+      "data-ocid": "home_gallery.section",
+      className: "py-20 sm:py-28 relative overflow-hidden",
+      style: { background: "oklch(0.07 0.012 270)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            "aria-hidden": true,
+            className: "pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[420px] rounded-full opacity-15 blur-3xl",
+            style: {
+              background: "radial-gradient(ellipse at center, oklch(0.72 0.16 80 / 0.4) 0%, transparent 70%)"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            "aria-hidden": true,
+            className: "pointer-events-none absolute bottom-0 right-0 w-64 h-64 rounded-full opacity-10 blur-3xl",
+            style: { background: "oklch(0.68 0.2 220 / 0.5)" }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            "aria-hidden": true,
+            className: "pointer-events-none absolute top-1/3 left-0 w-48 h-48 rounded-full opacity-10 blur-2xl",
+            style: { background: "oklch(0.68 0.2 220 / 0.4)" }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center text-center mb-14 gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "w-14 h-14 rounded-2xl flex items-center justify-center mb-1 shadow-lg",
+                style: {
+                  background: "linear-gradient(135deg, oklch(0.72 0.16 80 / 0.15), oklch(0.68 0.2 220 / 0.15))",
+                  border: "1px solid oklch(0.72 0.16 80 / 0.3)"
+                },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Images,
+                  {
+                    className: "w-7 h-7",
+                    style: { color: "oklch(0.72 0.16 80)" }
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h2",
+              {
+                className: "text-4xl sm:text-5xl font-display font-extrabold tracking-tight",
+                style: {
+                  background: "linear-gradient(120deg, oklch(0.72 0.16 80) 30%, oklch(0.82 0.14 80) 60%, oklch(0.72 0.16 80) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text"
+                },
+                children: "Our Gallery"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "h-0.5 w-12 rounded-full",
+                  style: { background: "oklch(0.68 0.2 220 / 0.6)" }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "h-1 w-24 rounded-full",
+                  style: { background: "oklch(0.68 0.2 220)" }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "h-0.5 w-12 rounded-full",
+                  style: { background: "oklch(0.68 0.2 220 / 0.6)" }
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-base sm:text-lg text-muted-foreground max-w-xl mt-1", children: [
+              "Moments from",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "oklch(0.72 0.16 80)" }, children: "Medhavi Physics Classes" }),
+              " ",
+              "— celebrating our students, toppers, and milestones."
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5", children: PHOTOS.map((photo, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            PhotoCard,
+            {
+              photo,
+              index: index2,
+              isVisible: visible.has(photo.key),
+              onOpen: openLightbox,
+              setRef: setRef2
+            },
+            photo.key
+          )) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center mt-12", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              type: "button",
+              "data-ocid": "home_gallery.view_all_button",
+              onClick: () => {
+                const nav = window.__navigateTo;
+                if (nav) nav("/gallery");
+                else window.location.href = "/gallery";
+              },
+              className: "px-8 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2",
+              style: {
+                background: "linear-gradient(135deg, oklch(0.72 0.16 80 / 0.15), oklch(0.68 0.2 220 / 0.12))",
+                border: "1px solid oklch(0.72 0.16 80 / 0.45)",
+                color: "oklch(0.72 0.16 80)",
+                boxShadow: "0 0 20px oklch(0.72 0.16 80 / 0.12)"
+              },
+              children: "View Full Gallery →"
+            }
+          ) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Lightbox,
+          {
+            open: lightboxOpen,
+            index: lightboxIndex,
+            onClose: closeLightbox,
+            onPrev: prevPhoto,
+            onNext: nextPhoto
+          }
+        )
+      ]
+    }
+  );
 }
 function AnimatedCounter({
   end,
@@ -86194,7 +86744,7 @@ function ResultsPage() {
   const filtered = activeYear === "All" ? toppers$1 : toppers$1.filter((t) => t.year === activeYear);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen bg-background", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(PageNavbar, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative py-32 px-4 text-center overflow-hidden", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative pt-36 pb-24 px-4 text-center overflow-hidden", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 pointer-events-none", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
@@ -87205,7 +87755,7 @@ function StudyMaterialsPage() {
   const filtered = activeSubject === "All" ? materials : materials.filter((m2) => m2.subject === activeSubject);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen bg-background", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(PageNavbar, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative py-32 px-4 text-center overflow-hidden", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative pt-36 pb-24 px-4 text-center overflow-hidden", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 pointer-events-none", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
@@ -88271,6 +88821,7 @@ function HomePage() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(ReviewsSection, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(PhysicsQuotesSection, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FAQSection, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(GallerySection, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ContactSection, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FloatingButtons, {})

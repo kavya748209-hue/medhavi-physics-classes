@@ -1,34 +1,27 @@
-import { FloatingButtons } from "@/components/FloatingButtons";
-import { PageNavbar } from "@/components/PageNavbar";
-import { Footer } from "@/pages/Footer";
 import { ChevronLeft, ChevronRight, Images, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const PHOTOS = [
-  { src: "/assets/photo1.png", key: "photo-1", label: "Classroom Session" },
-  { src: "/assets/photo2.png", key: "photo-2", label: "Students at Work" },
-  { src: "/assets/photo3.png", key: "photo-3", label: "Toppers Celebration" },
-  { src: "/assets/photo4.png", key: "photo-4", label: "Study Group" },
-  { src: "/assets/photo5.png", key: "photo-5", label: "Batch Photo" },
-  { src: "/assets/photo6.png", key: "photo-6", label: "Achievement Ceremony" },
-  { src: "/assets/photo7.png", key: "photo-7", label: "Special Event" },
-  { src: "/assets/photo8.png", key: "photo-8", label: "Lab Session" },
-  { src: "/assets/photo9.png", key: "photo-9", label: "Prize Distribution" },
-  { src: "/assets/photo10.png", key: "photo-10", label: "Annual Function" },
-  { src: "/assets/photo11.png", key: "photo-11", label: "Result Announcement" },
-  { src: "/assets/photo12.png", key: "photo-12", label: "Interactive Lecture" },
-  { src: "/assets/photo13.png", key: "photo-13", label: "Topper Felicitation" },
-  { src: "/assets/photo14.png", key: "photo-14", label: "Group Study" },
-  { src: "/assets/photo15.png", key: "photo-15", label: "Demo Experiment" },
-  { src: "/assets/photo16.png", key: "photo-16", label: "JEE Batch Gathering" },
-  {
-    src: "/assets/photo17.png",
-    key: "photo-17",
-    label: "Felicitation Ceremony",
-  },
+  { src: "/assets/photo1.png", key: "gs-1", label: "Classroom Session" },
+  { src: "/assets/photo2.png", key: "gs-2", label: "Students at Work" },
+  { src: "/assets/photo3.png", key: "gs-3", label: "Toppers Celebration" },
+  { src: "/assets/photo4.png", key: "gs-4", label: "Study Group" },
+  { src: "/assets/photo5.png", key: "gs-5", label: "Batch Photo" },
+  { src: "/assets/photo6.png", key: "gs-6", label: "Achievement Ceremony" },
+  { src: "/assets/photo7.png", key: "gs-7", label: "Special Event" },
+  { src: "/assets/photo8.png", key: "gs-8", label: "Lab Session" },
+  { src: "/assets/photo9.png", key: "gs-9", label: "Prize Distribution" },
+  { src: "/assets/photo10.png", key: "gs-10", label: "Annual Function" },
+  { src: "/assets/photo11.png", key: "gs-11", label: "Result Announcement" },
+  { src: "/assets/photo12.png", key: "gs-12", label: "Interactive Lecture" },
+  { src: "/assets/photo13.png", key: "gs-13", label: "Topper Felicitation" },
+  { src: "/assets/photo14.png", key: "gs-14", label: "Group Study" },
+  { src: "/assets/photo15.png", key: "gs-15", label: "Demo Experiment" },
+  { src: "/assets/photo16.png", key: "gs-16", label: "JEE Batch Gathering" },
+  { src: "/assets/photo17.png", key: "gs-17", label: "Felicitation Ceremony" },
 ];
 
-function useIntersectionObserver() {
+function useScrollVisible() {
   const refs = useRef<Map<string, Element>>(new Map());
   const [visible, setVisible] = useState<Set<string>>(new Set());
 
@@ -44,7 +37,7 @@ function useIntersectionObserver() {
           return next;
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
     );
     for (const el of refs.current.values()) observer.observe(el);
     return () => observer.disconnect();
@@ -71,12 +64,13 @@ function PhotoCard({
   onOpen: (idx: number) => void;
   setRef: (key: string, el: Element | null) => void;
 }) {
+  const delay = (index % 8) * 0.06;
   return (
     <button
       type="button"
       ref={(el) => setRef(photo.key, el)}
       data-key={photo.key}
-      data-ocid={`gallery.item.${index + 1}`}
+      data-ocid={`home_gallery.item.${index + 1}`}
       onClick={() => onOpen(index)}
       aria-label={`Open ${photo.label} in lightbox`}
       className="group relative cursor-pointer rounded-2xl overflow-hidden text-left w-full"
@@ -85,29 +79,27 @@ function PhotoCard({
         opacity: isVisible ? 1 : 0,
         transform: isVisible
           ? "translateY(0) scale(1)"
-          : "translateY(40px) scale(0.96)",
-        transition: `opacity 0.55s ease ${index * 0.07}s, transform 0.55s ease ${index * 0.07}s`,
+          : "translateY(36px) scale(0.96)",
+        transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s`,
         background: "transparent",
         border: "none",
         padding: 0,
       }}
     >
-      {/* Gold glow border on hover */}
+      {/* default border glow */}
       <div
-        className="absolute inset-0 rounded-2xl z-10 pointer-events-none transition-all duration-300"
-        style={{
-          boxShadow: "0 0 0 1px oklch(0.72 0.16 80 / 0.18)",
-        }}
+        className="absolute inset-0 rounded-2xl z-10 pointer-events-none"
+        style={{ boxShadow: "0 0 0 1px oklch(0.72 0.16 80 / 0.18)" }}
       />
+      {/* hover glow */}
       <div
         className="absolute inset-0 rounded-2xl z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
           boxShadow:
-            "0 0 0 2px oklch(0.72 0.16 80 / 0.7), 0 0 28px 4px oklch(0.72 0.16 80 / 0.25)",
+            "0 0 0 2px oklch(0.72 0.16 80 / 0.7), 0 0 28px 4px oklch(0.72 0.16 80 / 0.22)",
         }}
       />
 
-      {/* Image */}
       <img
         src={photo.src}
         alt={photo.label}
@@ -115,7 +107,7 @@ function PhotoCard({
         loading="lazy"
       />
 
-      {/* Overlay */}
+      {/* Overlay label */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4 z-20">
         <span
           className="text-sm font-semibold tracking-wide"
@@ -154,7 +146,6 @@ function Lightbox({
   const photo = PHOTOS[index];
   const touchStartX = useRef<number | null>(null);
 
-  // Lock body scroll when open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -162,7 +153,6 @@ function Lightbox({
     };
   }, [open]);
 
-  // Keyboard navigation
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
@@ -179,7 +169,6 @@ function Lightbox({
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
-
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
     const delta = e.changedTouches[0].clientX - touchStartX.current;
@@ -191,7 +180,7 @@ function Lightbox({
 
   return (
     <div
-      data-ocid="gallery.lightbox"
+      data-ocid="home_gallery.lightbox"
       style={{
         position: "fixed",
         inset: 0,
@@ -205,7 +194,6 @@ function Lightbox({
     >
       {/* Backdrop */}
       <div
-        data-ocid="gallery.lightbox_backdrop"
         onClick={onClose}
         onKeyDown={(e) => e.key === "Enter" && onClose()}
         role="presentation"
@@ -218,7 +206,6 @@ function Lightbox({
         }}
       />
 
-      {/* Dialog content */}
       <dialog
         open
         aria-label={`Lightbox: ${photo?.label ?? ""}`}
@@ -237,11 +224,10 @@ function Lightbox({
           maxWidth: "min(90vw, 900px)",
         }}
       >
-        {/* Close button */}
         <button
           type="button"
           onClick={onClose}
-          data-ocid="gallery.lightbox_close_button"
+          data-ocid="home_gallery.lightbox_close_button"
           aria-label="Close lightbox"
           className="absolute top-3 right-3 sm:top-5 sm:right-5 z-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2"
           style={{
@@ -258,14 +244,13 @@ function Lightbox({
           <X className="w-5 h-5" />
         </button>
 
-        {/* Prev */}
         <button
           type="button"
           onClick={(e) => {
             e.stopPropagation();
             onPrev();
           }}
-          data-ocid="gallery.lightbox_prev_button"
+          data-ocid="home_gallery.lightbox_prev_button"
           aria-label="Previous photo"
           className="absolute left-2 sm:left-4 z-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2"
           style={{
@@ -282,14 +267,13 @@ function Lightbox({
           <ChevronLeft className="w-6 h-6" />
         </button>
 
-        {/* Next */}
         <button
           type="button"
           onClick={(e) => {
             e.stopPropagation();
             onNext();
           }}
-          data-ocid="gallery.lightbox_next_button"
+          data-ocid="home_gallery.lightbox_next_button"
           aria-label="Next photo"
           className="absolute right-2 sm:right-4 z-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2"
           style={{
@@ -306,7 +290,6 @@ function Lightbox({
           <ChevronRight className="w-6 h-6" />
         </button>
 
-        {/* Image container */}
         <div
           className="relative z-10 flex flex-col items-center gap-4 px-16"
           style={{ width: "100%" }}
@@ -322,7 +305,6 @@ function Lightbox({
                 "0 0 60px oklch(0.72 0.16 80 / 0.18), 0 0 120px oklch(0.68 0.2 220 / 0.10)",
             }}
           />
-          {/* Caption + counter */}
           <div className="flex items-center gap-3">
             <span
               className="text-sm sm:text-base font-semibold"
@@ -340,18 +322,16 @@ function Lightbox({
   );
 }
 
-export default function GalleryPage() {
+export function GallerySection() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const { visible, setRef } = useIntersectionObserver();
+  const { visible, setRef } = useScrollVisible();
 
   const openLightbox = useCallback((idx: number) => {
     setLightboxIndex(idx);
     setLightboxOpen(true);
   }, []);
-
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
-
   const prevPhoto = useCallback(
     () => setLightboxIndex((i) => (i - 1 + PHOTOS.length) % PHOTOS.length),
     [],
@@ -362,32 +342,37 @@ export default function GalleryPage() {
   );
 
   return (
-    <div className="min-h-screen bg-background">
-      <PageNavbar />
+    <section
+      id="gallery"
+      data-ocid="home_gallery.section"
+      className="py-20 sm:py-28 relative overflow-hidden"
+      style={{ background: "oklch(0.07 0.012 270)" }}
+    >
+      {/* Decorative background glows */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[420px] rounded-full opacity-15 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, oklch(0.72 0.16 80 / 0.4) 0%, transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 right-0 w-64 h-64 rounded-full opacity-10 blur-3xl"
+        style={{ background: "oklch(0.68 0.2 220 / 0.5)" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/3 left-0 w-48 h-48 rounded-full opacity-10 blur-2xl"
+        style={{ background: "oklch(0.68 0.2 220 / 0.4)" }}
+      />
 
-      {/* Page header */}
-      <section
-        data-ocid="gallery.page"
-        className="pt-28 pb-14 px-4 text-center relative overflow-hidden"
-      >
-        {/* Background decorative blobs */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full opacity-20 blur-3xl"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, oklch(0.72 0.16 80 / 0.35) 0%, transparent 70%)",
-          }}
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute top-10 left-10 w-48 h-48 rounded-full opacity-10 blur-2xl"
-          style={{ background: "oklch(0.68 0.2 220 / 0.5)" }}
-        />
-
-        <div className="relative z-10 flex flex-col items-center gap-3">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8">
+        {/* Section heading */}
+        <div className="flex flex-col items-center text-center mb-14 gap-3">
           <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center mb-2 shadow-lg"
+            className="w-14 h-14 rounded-2xl flex items-center justify-center mb-1 shadow-lg"
             style={{
               background:
                 "linear-gradient(135deg, oklch(0.72 0.16 80 / 0.15), oklch(0.68 0.2 220 / 0.15))",
@@ -400,8 +385,8 @@ export default function GalleryPage() {
             />
           </div>
 
-          <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight"
+          <h2
+            className="text-4xl sm:text-5xl font-display font-extrabold tracking-tight"
             style={{
               background:
                 "linear-gradient(120deg, oklch(0.72 0.16 80) 30%, oklch(0.82 0.14 80) 60%, oklch(0.72 0.16 80) 100%)",
@@ -411,7 +396,7 @@ export default function GalleryPage() {
             }}
           >
             Our Gallery
-          </h1>
+          </h2>
 
           {/* Cyan accent underline */}
           <div className="flex items-center justify-center gap-2">
@@ -429,7 +414,7 @@ export default function GalleryPage() {
             />
           </div>
 
-          <p className="text-lg text-muted-foreground max-w-xl mt-1">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mt-1">
             Moments from{" "}
             <span style={{ color: "oklch(0.72 0.16 80)" }}>
               Medhavi Physics Classes
@@ -437,14 +422,9 @@ export default function GalleryPage() {
             — celebrating our students, toppers, and milestones.
           </p>
         </div>
-      </section>
 
-      {/* Photo grid */}
-      <section
-        data-ocid="gallery.section"
-        className="pb-20 px-4 sm:px-8 max-w-7xl mx-auto"
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
+        {/* Photo grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5">
           {PHOTOS.map((photo, index) => (
             <PhotoCard
               key={photo.key}
@@ -457,19 +437,31 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        {/* Empty state (should never appear with static data) */}
-        {PHOTOS.length === 0 && (
-          <div
-            data-ocid="gallery.empty_state"
-            className="text-center py-24 text-muted-foreground"
+        {/* View full gallery CTA */}
+        <div className="flex justify-center mt-12">
+          <button
+            type="button"
+            data-ocid="home_gallery.view_all_button"
+            onClick={() => {
+              const nav = (
+                window as Window & { __navigateTo?: (p: string) => void }
+              ).__navigateTo;
+              if (nav) nav("/gallery");
+              else window.location.href = "/gallery";
+            }}
+            className="px-8 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2"
+            style={{
+              background:
+                "linear-gradient(135deg, oklch(0.72 0.16 80 / 0.15), oklch(0.68 0.2 220 / 0.12))",
+              border: "1px solid oklch(0.72 0.16 80 / 0.45)",
+              color: "oklch(0.72 0.16 80)",
+              boxShadow: "0 0 20px oklch(0.72 0.16 80 / 0.12)",
+            }}
           >
-            No photos yet.
-          </div>
-        )}
-      </section>
-
-      <Footer />
-      <FloatingButtons />
+            View Full Gallery →
+          </button>
+        </div>
+      </div>
 
       <Lightbox
         open={lightboxOpen}
@@ -478,6 +470,6 @@ export default function GalleryPage() {
         onPrev={prevPhoto}
         onNext={nextPhoto}
       />
-    </div>
+    </section>
   );
 }

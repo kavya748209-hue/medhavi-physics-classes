@@ -30,9 +30,9 @@ export function Navbar() {
   return (
     <nav
       data-ocid="navbar"
-      className={`fixed top-0 left-0 right-0 z-40 transition-smooth ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-frosted border-b border-border/60 shadow-lg"
+          ? "backdrop-blur-md bg-[oklch(0.08_0.02_250/0.95)] border-b border-[oklch(0.72_0.18_80/0.3)] shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -95,32 +95,35 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <div
-          data-ocid="navbar.mobile_menu"
-          className="md:hidden backdrop-frosted border-t border-border/40 px-4 pb-4"
-        >
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              type="button"
-              onClick={() => scrollTo(link.href)}
-              className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-accent hover:bg-primary/10 rounded-lg transition-smooth"
-            >
-              {link.label}
-            </button>
-          ))}
-          <a
-            href="https://wa.me/919897085277"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block mt-2 px-4 py-3 text-sm font-semibold text-white text-center bg-gradient-to-r from-accent to-primary rounded-xl"
+      {/* Mobile menu — max-h/opacity transition avoids layout jump */}
+      <div
+        data-ocid="navbar.mobile_menu"
+        data-mobile-menu
+        className={`md:hidden backdrop-blur-md bg-[oklch(0.08_0.02_250/0.97)] border-t border-border/40 px-4 pb-4 overflow-hidden transition-all duration-300 ease-in-out ${
+          open
+            ? "max-h-screen opacity-100"
+            : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        {navLinks.map((link) => (
+          <button
+            key={link.href}
+            type="button"
+            onClick={() => scrollTo(link.href)}
+            className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-accent hover:bg-primary/10 rounded-lg transition-smooth"
           >
-            Enroll Now
-          </a>
-        </div>
-      )}
+            {link.label}
+          </button>
+        ))}
+        <a
+          href="https://wa.me/919897085277"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block mt-2 px-4 py-3 text-sm font-semibold text-white text-center bg-gradient-to-r from-accent to-primary rounded-xl"
+        >
+          Enroll Now
+        </a>
+      </div>
     </nav>
   );
 }

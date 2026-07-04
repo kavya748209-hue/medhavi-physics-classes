@@ -50,7 +50,7 @@ const milestones = [
   {
     year: "2019",
     title: "Batch Expansion",
-    desc: "Expanded to dedicated batches for Class 11, Class 12, NEET, and JEE, serving 200+ students annually.",
+    desc: "Expanded to dedicated batches for Class 11, Class 12, NEET, and JEE, growing our student community across Bijnor.",
   },
   {
     year: "2022",
@@ -89,7 +89,7 @@ const values = [
 
 const qualifications = [
   { icon: GraduationCap, label: "B.Tech (Physics & Engineering)" },
-  { icon: BookOpen, label: "10+ Years Teaching Experience" },
+  { icon: BookOpen, label: "14+ Years Teaching Experience" },
   { icon: Award, label: "500+ NEET/JEE Qualified Students" },
   { icon: Atom, label: "Specialized in Modern Physics & Electrodynamics" },
 ];
@@ -174,15 +174,18 @@ export default function AboutPage() {
               <p className="text-accent font-semibold text-sm tracking-widest uppercase mb-3">
                 Meet the Educator
               </p>
-              <h2 className="font-display font-black text-3xl md:text-4xl text-foreground mb-6">
+              <h2 className="font-display font-black text-3xl md:text-4xl text-foreground mb-2">
                 Er. Pooja Verma
               </h2>
+              <p className="text-accent font-semibold text-sm mb-6">
+                M.Tech, B.Tech, B.Ed.
+              </p>
               <div className="space-y-4 text-muted-foreground text-base leading-relaxed">
                 <p>
                   Er. Pooja Verma is one of India's most dedicated physics
                   educators, with over{" "}
                   <strong className="text-foreground">
-                    10 years of teaching experience
+                    14+ years of teaching experience
                   </strong>{" "}
                   at the highest competitive exam levels. Her B.Tech background
                   in Physics and Engineering gives her a unique edge.
@@ -233,8 +236,8 @@ export default function AboutPage() {
                 />
                 <div className="grid grid-cols-2 gap-8">
                   {[
-                    { num: "500+", label: "NEET/JEE Toppers" },
-                    { num: "10+", label: "Years of Excellence" },
+                    { num: "1400+", label: "Happy Students" },
+                    { num: "14+", label: "Years of Excellence" },
                     { num: "98%", label: "Success Rate" },
                     { num: "4", label: "Expert Courses" },
                   ].map((s) => (

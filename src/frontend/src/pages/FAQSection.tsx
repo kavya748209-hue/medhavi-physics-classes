@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "How many toppers has Medhavi produced?",
-    a: "Over 10+ years, Medhavi Physics Classes has produced 500+ toppers across NEET, JEE, and Class 12 Boards. Many of our alumni are now doctors, engineers, and IITians contributing to society.",
+    a: "Over 14+ years, Medhavi Physics Classes has produced 500+ toppers across NEET, JEE, and Class 12 Boards. Many of our alumni are now doctors, engineers, and IITians contributing to society.",
   },
   {
     q: "What makes Er. Pooja Verma's teaching unique?",

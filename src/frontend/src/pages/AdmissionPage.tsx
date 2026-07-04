@@ -109,6 +109,12 @@ const courses = [
     icon: "⚡",
   },
   {
+    id: "class11-chemistry",
+    title: "Class 11 Chemistry",
+    desc: "Foundation in physical, organic & inorganic chemistry",
+    icon: "⚗️",
+  },
+  {
     id: "class12",
     title: "Class 12",
     desc: "Electrodynamics, optics & modern physics",

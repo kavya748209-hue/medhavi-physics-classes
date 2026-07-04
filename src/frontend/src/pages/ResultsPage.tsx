@@ -139,9 +139,8 @@ const years = ["All", "2024", "2023", "2022", "2021"];
 
 const stats = [
   { label: "Students Qualified", value: "500+", icon: Users },
-  { label: "Top 100 AIR Ranks", value: "28+", icon: Trophy },
   { label: "Success Rate", value: "98%", icon: TrendingUp },
-  { label: "Years of Results", value: "10+", icon: Award },
+  { label: "Years of Results", value: "14+", icon: Award },
 ];
 
 export default function ResultsPage() {
@@ -213,7 +212,7 @@ export default function ResultsPage() {
         className="py-16 px-4"
         style={{ background: "oklch(0.11 0.012 270)" }}
       >
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}

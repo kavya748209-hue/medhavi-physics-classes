@@ -7,7 +7,11 @@ type NavLink = {
   label: string;
   to: string;
   highlight?: boolean;
+  external?: boolean;
 };
+
+const FEE_POLICY_URL =
+  "https://drive.google.com/file/d/1wQsT4ciVW8DeEd5gplpj9_NCtyYOlw6g/view";
 
 // Desktop primary row — Admission upfront, Contact last.
 const primaryNavLinks: NavLink[] = [
@@ -17,7 +21,7 @@ const primaryNavLinks: NavLink[] = [
   { label: "Courses", to: "/courses" },
   { label: "Results", to: "/results" },
   { label: "Gallery", to: "/gallery", highlight: true },
-  { label: "Fee Policy", to: "/#fee-policy" },
+  { label: "Fee Policy", to: FEE_POLICY_URL, external: true },
   { label: "Contact", to: "/#contact" },
 ];
 
@@ -34,7 +38,7 @@ const mobileNavLinks: NavLink[] = [
   { label: "Courses", to: "/courses" },
   { label: "Results", to: "/results" },
   { label: "Gallery", to: "/gallery", highlight: true },
-  { label: "Fee Policy", to: "/#fee-policy" },
+  { label: "Fee Policy", to: FEE_POLICY_URL, external: true },
   { label: "Physics Tips", to: "/physics-tips" },
   { label: "Contact", to: "/#contact" },
 ];
@@ -112,6 +116,19 @@ export function PageNavbar() {
     setCurrentPath(to);
   }, []);
 
+  const handleLink = useCallback(
+    (link: NavLink) => {
+      if (link.external) {
+        setOpen(false);
+        setMoreOpen(false);
+        window.open(link.to, "_blank", "noopener,noreferrer");
+        return;
+      }
+      navigate(link.to);
+    },
+    [navigate],
+  );
+
   const isMoreActive = moreNavLinks.some((l) => currentPath === l.to);
 
   const renderLinkClass = (link: NavLink, active: boolean) =>
@@ -160,20 +177,36 @@ export function PageNavbar() {
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-1">
-            {primaryNavLinks.map((link) => (
-              <button
-                key={link.to}
-                type="button"
-                onClick={() => navigate(link.to)}
-                data-ocid={ocidFor(link.label)}
-                className={`px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
-                  link,
-                  currentPath === link.to,
-                )}`}
-              >
-                {link.label}
-              </button>
-            ))}
+            {primaryNavLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.to}
+                  href={link.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-ocid={ocidFor(link.label)}
+                  className={`px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+                    link,
+                    false,
+                  )}`}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <button
+                  key={link.to}
+                  type="button"
+                  onClick={() => handleLink(link)}
+                  data-ocid={ocidFor(link.label)}
+                  className={`px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+                    link,
+                    currentPath === link.to,
+                  )}`}
+                >
+                  {link.label}
+                </button>
+              ),
+            )}
 
             {/* More dropdown — Physics Tips only */}
             <div className="relative" data-more-menu>
@@ -253,20 +286,36 @@ export function PageNavbar() {
             : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
-        {mobileNavLinks.map((link) => (
-          <button
-            key={link.to}
-            type="button"
-            onClick={() => navigate(link.to)}
-            data-ocid={ocidFor(link.label, "mobile_link")}
-            className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
-              link,
-              currentPath === link.to,
-            )}`}
-          >
-            {link.label}
-          </button>
-        ))}
+        {mobileNavLinks.map((link) =>
+          link.external ? (
+            <a
+              key={link.to}
+              href={link.to}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-ocid={ocidFor(link.label, "mobile_link")}
+              className={`block w-full px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+                link,
+                false,
+              )}`}
+            >
+              {link.label}
+            </a>
+          ) : (
+            <button
+              key={link.to}
+              type="button"
+              onClick={() => handleLink(link)}
+              data-ocid={ocidFor(link.label, "mobile_link")}
+              className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+                link,
+                currentPath === link.to,
+              )}`}
+            >
+              {link.label}
+            </button>
+          ),
+        )}
         <a
           href="https://wa.me/919897085277"
           target="_blank"

@@ -78,7 +78,7 @@ export function Footer() {
               style={{ color: "oklch(0.5 0.02 60)" }}
             >
               Bijnor's most trusted physics coaching institute. Transforming
-              students into NEET &amp; JEE toppers for over 10 years.
+              students into NEET &amp; JEE toppers for over 14+ years.
             </p>
             <div className="flex gap-3">
               <a
@@ -172,6 +172,13 @@ export function Footer() {
               >
                 📞 09897085277
               </a>
+              <a
+                href="tel:9634429377"
+                className="mt-1 block text-xs transition-smooth hover:scale-105"
+                style={{ color: "oklch(0.6 0.02 60)" }}
+              >
+                📞 Mr. Nitish Verma: 9634429377
+              </a>
               <p className="mt-1">⏰ Mon–Sat: 7AM – 8PM</p>
             </div>
           </div>
@@ -186,7 +193,7 @@ export function Footer() {
             reserved.
           </p>
           <p className="text-xs" style={{ color: "oklch(0.35 0.01 60)" }}>
-           @ Medhavi Physics Classes {" "}
+            Built with love using{" "}
             <a
               href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
               target="_blank"
@@ -202,7 +209,7 @@ export function Footer() {
                   "oklch(0.5 0.02 60)";
               }}
             >
-              
+              caffeine.ai
             </a>
           </p>
         </div>

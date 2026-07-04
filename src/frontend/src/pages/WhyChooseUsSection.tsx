@@ -66,7 +66,7 @@ const reasons = [
   },
   {
     icon: Star,
-    title: "10+ Years of Excellence",
+    title: "14+ Years of Excellence",
     desc: "Over a decade of transforming average students into confident achievers. Our track record speaks — Medhavi is Bijnor's most trusted physics institute.",
   },
   {
@@ -293,7 +293,7 @@ export function WhyChooseUsSection() {
                 className="text-5xl font-display font-black mb-2 leading-none"
                 style={{ color: "oklch(0.85 0.12 80)" }}
               >
-                10+
+                14+
               </div>
               <div className="text-sm" style={{ color: "oklch(0.65 0.02 60)" }}>
                 Years of Excellence

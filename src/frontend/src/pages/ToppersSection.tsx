@@ -246,11 +246,9 @@ function BadgePill({ text, icon }: { text: string; icon: string }) {
 // ── Static data ───────────────────────────────────────────────────────────────
 const stats = [
   { value: 500, suffix: "+", label: "Toppers Produced", icon: "🏆" },
-  { value: 10, suffix: "+", label: "Years of Excellence", icon: "⭐" },
+  { value: 14, suffix: "+", label: "Years of Excellence", icon: "⭐" },
   { value: 98, suffix: "%", label: "Success Rate", icon: "📈" },
-  { value: 50, suffix: "+", label: "AIR Ranks Secured", icon: "🎯" },
-  { value: 5, suffix: "x", label: "Top 100 NEET Streak", icon: "🔥" },
-  { value: 1000, suffix: "+", label: "Students Mentored", icon: "👩‍🎓" },
+  { value: 1400, suffix: "+", label: "Happy Students", icon: "👩‍🎓" },
 ];
 
 const toppers = [
@@ -301,14 +299,12 @@ const toppers = [
 const marqueeItems = [
   "🏆 500+ Toppers",
   "🎯 AIR 156 in NEET",
-  "⭐ 10+ Years of Excellence",
+  "⭐ 14+ Years of Excellence",
   "📈 98% Success Rate",
-  "🔥 Top 100 NEET — 5 Years Running",
-  "👩‍🎓 1000+ Students Mentored",
+  "👩‍🎓 1400+ Happy Students",
   "🥇 JEE Advanced Qualifiers Every Batch",
   "💡 99.2%ile in JEE Mains",
   "🌟 Best Physics Faculty Award",
-  "🏅 50+ AIR Ranks in NEET",
 ];
 
 const ringConfig: {
@@ -450,7 +446,7 @@ export function ToppersSection() {
 
         {/* ── Achievement stats grid ── */}
         <div
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-16"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16"
           data-ocid="toppers.stats.list"
         >
           {stats.map((s, i) => (
@@ -530,7 +526,6 @@ export function ToppersSection() {
           className="flex flex-wrap justify-center gap-3 mt-8"
           data-ocid="toppers.badges"
         >
-          <BadgePill icon="🥇" text="NEET Top 100 — 5 Consecutive Years" />
           <BadgePill icon="📚" text="Best Physics Faculty — Bijnor District" />
           <BadgePill icon="🎓" text="JEE Advanced Qualifiers Every Batch" />
           <BadgePill icon="⚡" text="India's Most Dedicated Physics Tutor" />

@@ -121,7 +121,7 @@ const milestones = [
   },
   {
     icon: Award,
-    value: "10+",
+    value: "14+",
     label: "State-Level Toppers",
     color: "oklch(0.72 0.16 80)",
   },

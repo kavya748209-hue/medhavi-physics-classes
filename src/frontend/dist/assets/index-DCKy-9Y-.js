@@ -18681,18 +18681,18 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$H = [
+const __iconNode$x = [
   ["path", { d: "M5 12h14", key: "1ays0h" }],
   ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
 ];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$H);
+const ArrowRight = createLucideIcon("arrow-right", __iconNode$x);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$G = [
+const __iconNode$w = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   [
     "path",
@@ -18709,14 +18709,14 @@ const __iconNode$G = [
     }
   ]
 ];
-const Atom = createLucideIcon("atom", __iconNode$G);
+const Atom = createLucideIcon("atom", __iconNode$w);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$F = [
+const __iconNode$v = [
   [
     "path",
     {
@@ -18726,26 +18726,14 @@ const __iconNode$F = [
   ],
   ["circle", { cx: "12", cy: "8", r: "6", key: "1vp47v" }]
 ];
-const Award = createLucideIcon("award", __iconNode$F);
+const Award = createLucideIcon("award", __iconNode$v);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$E = [
-  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
-  ["path", { d: "M6 12h.01M18 12h.01", key: "113zkx" }]
-];
-const Banknote = createLucideIcon("banknote", __iconNode$E);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$D = [
+const __iconNode$u = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
   [
     "path",
@@ -18755,14 +18743,14 @@ const __iconNode$D = [
     }
   ]
 ];
-const BookOpen = createLucideIcon("book-open", __iconNode$D);
+const BookOpen = createLucideIcon("book-open", __iconNode$u);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$C = [
+const __iconNode$t = [
   [
     "path",
     {
@@ -18785,14 +18773,14 @@ const __iconNode$C = [
   ["path", { d: "M6 18a4 4 0 0 1-1.967-.516", key: "2e4loj" }],
   ["path", { d: "M19.967 17.484A4 4 0 0 1 18 18", key: "159ez6" }]
 ];
-const Brain = createLucideIcon("brain", __iconNode$C);
+const Brain = createLucideIcon("brain", __iconNode$t);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$B = [
+const __iconNode$s = [
   ["rect", { width: "16", height: "20", x: "4", y: "2", rx: "2", key: "1nb95v" }],
   ["line", { x1: "8", x2: "16", y1: "6", y2: "6", key: "x4nwl0" }],
   ["line", { x1: "16", x2: "16", y1: "14", y2: "18", key: "wjye3r" }],
@@ -18804,88 +18792,73 @@ const __iconNode$B = [
   ["path", { d: "M12 18h.01", key: "mhygvu" }],
   ["path", { d: "M8 18h.01", key: "lrp35t" }]
 ];
-const Calculator = createLucideIcon("calculator", __iconNode$B);
+const Calculator = createLucideIcon("calculator", __iconNode$s);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$A = [
-  ["path", { d: "M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5", key: "1osxxc" }],
-  ["path", { d: "M16 2v4", key: "4m81vk" }],
-  ["path", { d: "M8 2v4", key: "1cmpym" }],
-  ["path", { d: "M3 10h5", key: "r794hk" }],
-  ["path", { d: "M17.5 17.5 16 16.3V14", key: "akvzfd" }],
-  ["circle", { cx: "16", cy: "16", r: "6", key: "qoo3c4" }]
-];
-const CalendarClock = createLucideIcon("calendar-clock", __iconNode$A);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$z = [
+const __iconNode$r = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$z);
+const Calendar = createLucideIcon("calendar", __iconNode$r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$y = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$y);
+const __iconNode$q = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$x = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$x);
+const __iconNode$p = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$w = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$w);
+const __iconNode$o = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$v = [
+const __iconNode$n = [
   ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
   ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
 ];
-const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$v);
+const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$n);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$u = [
+const __iconNode$m = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
 ];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$u);
+const CircleCheck = createLucideIcon("circle-check", __iconNode$m);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$t = [
+const __iconNode$l = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   [
     "path",
@@ -18899,50 +18872,36 @@ const __iconNode$t = [
   ["path", { d: "M8 11h.01", key: "1dfujw" }],
   ["path", { d: "M8 16h.01", key: "18s6g9" }]
 ];
-const ClipboardList = createLucideIcon("clipboard-list", __iconNode$t);
+const ClipboardList = createLucideIcon("clipboard-list", __iconNode$l);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$s = [
+const __iconNode$k = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
 ];
-const Clock$1 = createLucideIcon("clock", __iconNode$s);
+const Clock$1 = createLucideIcon("clock", __iconNode$k);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$r = [
+const __iconNode$j = [
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
   ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const CreditCard = createLucideIcon("credit-card", __iconNode$r);
+const CreditCard = createLucideIcon("credit-card", __iconNode$j);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$q = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M10 9H8", key: "b1mrlr" }],
-  ["path", { d: "M16 13H8", key: "t4e002" }],
-  ["path", { d: "M16 17H8", key: "z1uh3a" }]
-];
-const FileText = createLucideIcon("file-text", __iconNode$q);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$p = [
+const __iconNode$i = [
   [
     "path",
     {
@@ -18953,14 +18912,14 @@ const __iconNode$p = [
   ["path", { d: "M6.453 15h11.094", key: "3shlmq" }],
   ["path", { d: "M8.5 2h7", key: "csnxdl" }]
 ];
-const FlaskConical = createLucideIcon("flask-conical", __iconNode$p);
+const FlaskConical = createLucideIcon("flask-conical", __iconNode$i);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$o = [
+const __iconNode$h = [
   [
     "path",
     {
@@ -18971,59 +18930,38 @@ const __iconNode$o = [
   ["path", { d: "M22 10v6", key: "1lu8f3" }],
   ["path", { d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5", key: "1r8lef" }]
 ];
-const GraduationCap = createLucideIcon("graduation-cap", __iconNode$o);
+const GraduationCap = createLucideIcon("graduation-cap", __iconNode$h);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$n = [
+const __iconNode$g = [
   ["path", { d: "M18 22H4a2 2 0 0 1-2-2V6", key: "pblm9e" }],
   ["path", { d: "m22 13-1.296-1.296a2.41 2.41 0 0 0-3.408 0L11 18", key: "nf6bnh" }],
   ["circle", { cx: "12", cy: "8", r: "2", key: "1822b1" }],
   ["rect", { width: "16", height: "16", x: "6", y: "2", rx: "2", key: "12espp" }]
 ];
-const Images = createLucideIcon("images", __iconNode$n);
+const Images = createLucideIcon("images", __iconNode$g);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$m = [
-  ["path", { d: "M10 18v-7", key: "wt116b" }],
-  [
-    "path",
-    {
-      d: "M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z",
-      key: "1m329m"
-    }
-  ],
-  ["path", { d: "M14 18v-7", key: "vav6t3" }],
-  ["path", { d: "M18 18v-7", key: "aexdmj" }],
-  ["path", { d: "M3 22h18", key: "8prr45" }],
-  ["path", { d: "M6 18v-7", key: "1ivflk" }]
-];
-const Landmark = createLucideIcon("landmark", __iconNode$m);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$l = [
+const __iconNode$f = [
   ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
   ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
 ];
-const Mail = createLucideIcon("mail", __iconNode$l);
+const Mail = createLucideIcon("mail", __iconNode$f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$k = [
+const __iconNode$e = [
   [
     "path",
     {
@@ -19033,36 +18971,36 @@ const __iconNode$k = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$k);
+const MapPin = createLucideIcon("map-pin", __iconNode$e);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$j = [
+const __iconNode$d = [
   ["path", { d: "M4 12h16", key: "1lakjw" }],
   ["path", { d: "M4 18h16", key: "19g7jn" }],
   ["path", { d: "M4 6h16", key: "1o0s65" }]
 ];
-const Menu = createLucideIcon("menu", __iconNode$j);
+const Menu = createLucideIcon("menu", __iconNode$d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$i = [
+const __iconNode$c = [
   ["path", { d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z", key: "vv11sd" }]
 ];
-const MessageCircle = createLucideIcon("message-circle", __iconNode$i);
+const MessageCircle = createLucideIcon("message-circle", __iconNode$c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$h = [
+const __iconNode$b = [
   ["path", { d: "M6 18h8", key: "1borvv" }],
   ["path", { d: "M3 22h18", key: "8prr45" }],
   ["path", { d: "M14 22a7 7 0 1 0 0-14h-1", key: "1jwaiy" }],
@@ -19070,26 +19008,14 @@ const __iconNode$h = [
   ["path", { d: "M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z", key: "1bmzmy" }],
   ["path", { d: "M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3", key: "1drr47" }]
 ];
-const Microscope = createLucideIcon("microscope", __iconNode$h);
+const Microscope = createLucideIcon("microscope", __iconNode$b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$g = [
-  ["line", { x1: "19", x2: "5", y1: "5", y2: "19", key: "1x9vlm" }],
-  ["circle", { cx: "6.5", cy: "6.5", r: "2.5", key: "4mh3h7" }],
-  ["circle", { cx: "17.5", cy: "17.5", r: "2.5", key: "1mdrzq" }]
-];
-const Percent = createLucideIcon("percent", __iconNode$g);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$f = [
+const __iconNode$a = [
   [
     "path",
     {
@@ -19098,14 +19024,14 @@ const __iconNode$f = [
     }
   ]
 ];
-const Phone = createLucideIcon("phone", __iconNode$f);
+const Phone = createLucideIcon("phone", __iconNode$a);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$e = [
+const __iconNode$9 = [
   [
     "path",
     {
@@ -19121,58 +19047,14 @@ const __iconNode$e = [
     }
   ]
 ];
-const Quote = createLucideIcon("quote", __iconNode$e);
+const Quote = createLucideIcon("quote", __iconNode$9);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$d = [
-  [
-    "path",
-    { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
-  ],
-  ["path", { d: "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8", key: "1h4pet" }],
-  ["path", { d: "M12 17.5v-11", key: "1jc1ny" }]
-];
-const Receipt = createLucideIcon("receipt", __iconNode$d);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$c = [
-  ["path", { d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "1357e3" }],
-  ["path", { d: "M3 3v5h5", key: "1xhq8a" }]
-];
-const RotateCcw = createLucideIcon("rotate-ccw", __iconNode$c);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$b = [
-  [
-    "path",
-    {
-      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
-      key: "oel41y"
-    }
-  ],
-  ["path", { d: "M12 8v4", key: "1got3b" }],
-  ["path", { d: "M12 16h.01", key: "1drbdi" }]
-];
-const ShieldAlert = createLucideIcon("shield-alert", __iconNode$b);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$a = [
+const __iconNode$8 = [
   [
     "path",
     {
@@ -19185,14 +19067,14 @@ const __iconNode$a = [
   ["path", { d: "M4 17v2", key: "vumght" }],
   ["path", { d: "M5 18H3", key: "zchphs" }]
 ];
-const Sparkles = createLucideIcon("sparkles", __iconNode$a);
+const Sparkles = createLucideIcon("sparkles", __iconNode$8);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$9 = [
+const __iconNode$7 = [
   [
     "path",
     {
@@ -19201,30 +19083,7 @@ const __iconNode$9 = [
     }
   ]
 ];
-const Star = createLucideIcon("star", __iconNode$9);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$8 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
-];
-const Target = createLucideIcon("target", __iconNode$8);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$7 = [
-  ["path", { d: "M16 7h6v6", key: "box55l" }],
-  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
-];
-const TrendingUp = createLucideIcon("trending-up", __iconNode$7);
+const Star = createLucideIcon("star", __iconNode$7);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -19232,17 +19091,11 @@ const TrendingUp = createLucideIcon("trending-up", __iconNode$7);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$6 = [
-  [
-    "path",
-    {
-      d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",
-      key: "wmoenq"
-    }
-  ],
-  ["path", { d: "M12 9v4", key: "juzpu7" }],
-  ["path", { d: "M12 17h.01", key: "p32p05" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
 ];
-const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$6);
+const Target = createLucideIcon("target", __iconNode$6);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -19250,14 +19103,10 @@ const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$6);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$5 = [
-  ["path", { d: "M6 9H4.5a2.5 2.5 0 0 1 0-5H6", key: "17hqa7" }],
-  ["path", { d: "M18 9h1.5a2.5 2.5 0 0 0 0-5H18", key: "lmptdp" }],
-  ["path", { d: "M4 22h16", key: "57wxv0" }],
-  ["path", { d: "M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22", key: "1nw9bq" }],
-  ["path", { d: "M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22", key: "1np0yb" }],
-  ["path", { d: "M18 2H6v7a6 6 0 0 0 12 0V2Z", key: "u46fv3" }]
+  ["path", { d: "M16 7h6v6", key: "box55l" }],
+  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
 ];
-const Trophy = createLucideIcon("trophy", __iconNode$5);
+const TrendingUp = createLucideIcon("trending-up", __iconNode$5);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -19265,11 +19114,14 @@ const Trophy = createLucideIcon("trophy", __iconNode$5);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$4 = [
-  ["path", { d: "m16 11 2 2 4-4", key: "9rsbq5" }],
-  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
+  ["path", { d: "M6 9H4.5a2.5 2.5 0 0 1 0-5H6", key: "17hqa7" }],
+  ["path", { d: "M18 9h1.5a2.5 2.5 0 0 0 0-5H18", key: "lmptdp" }],
+  ["path", { d: "M4 22h16", key: "57wxv0" }],
+  ["path", { d: "M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22", key: "1nw9bq" }],
+  ["path", { d: "M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22", key: "1np0yb" }],
+  ["path", { d: "M18 2H6v7a6 6 0 0 0 12 0V2Z", key: "u46fv3" }]
 ];
-const UserCheck = createLucideIcon("user-check", __iconNode$4);
+const Trophy = createLucideIcon("trophy", __iconNode$4);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -19277,12 +19129,11 @@ const UserCheck = createLucideIcon("user-check", __iconNode$4);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$3 = [
+  ["path", { d: "m16 11 2 2 4-4", key: "9rsbq5" }],
   ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-  ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
-  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
   ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
 ];
-const Users = createLucideIcon("users", __iconNode$3);
+const UserCheck = createLucideIcon("user-check", __iconNode$3);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -19290,16 +19141,12 @@ const Users = createLucideIcon("users", __iconNode$3);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$2 = [
-  [
-    "path",
-    {
-      d: "M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1",
-      key: "18etb6"
-    }
-  ],
-  ["path", { d: "M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4", key: "xoc0q4" }]
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
+  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
 ];
-const Wallet = createLucideIcon("wallet", __iconNode$2);
+const Users = createLucideIcon("users", __iconNode$2);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -19327,6 +19174,7 @@ const __iconNode = [
   ]
 ];
 const Zap = createLucideIcon("zap", __iconNode);
+const FEE_POLICY_URL = "https://drive.google.com/file/d/1wQsT4ciVW8DeEd5gplpj9_NCtyYOlw6g/view";
 const primaryNavLinks = [
   { label: "Home", to: "/" },
   { label: "Admission", to: "/admission" },
@@ -19334,7 +19182,7 @@ const primaryNavLinks = [
   { label: "Courses", to: "/courses" },
   { label: "Results", to: "/results" },
   { label: "Gallery", to: "/gallery", highlight: true },
-  { label: "Fee Policy", to: "/#fee-policy" },
+  { label: "Fee Policy", to: FEE_POLICY_URL, external: true },
   { label: "Contact", to: "/#contact" }
 ];
 const moreNavLinks = [
@@ -19347,7 +19195,7 @@ const mobileNavLinks = [
   { label: "Courses", to: "/courses" },
   { label: "Results", to: "/results" },
   { label: "Gallery", to: "/gallery", highlight: true },
-  { label: "Fee Policy", to: "/#fee-policy" },
+  { label: "Fee Policy", to: FEE_POLICY_URL, external: true },
   { label: "Physics Tips", to: "/physics-tips" },
   { label: "Contact", to: "/#contact" }
 ];
@@ -19414,6 +19262,18 @@ function PageNavbar() {
     (_c2 = window.__navigateTo) == null ? void 0 : _c2.call(window, to);
     setCurrentPath(to);
   }, []);
+  const handleLink = reactExports.useCallback(
+    (link) => {
+      if (link.external) {
+        setOpen(false);
+        setMoreOpen(false);
+        window.open(link.to, "_blank", "noopener,noreferrer");
+        return;
+      }
+      navigate(link.to);
+    },
+    [navigate]
+  );
   const isMoreActive = moreNavLinks.some((l2) => currentPath === l2.to);
   const renderLinkClass = (link, active) => link.highlight ? active ? "text-primary bg-primary/20 ring-1 ring-primary/60 font-semibold" : "text-primary bg-primary/10 ring-1 ring-primary/30 font-semibold hover:bg-primary/20 hover:ring-primary/60" : active ? "text-accent bg-primary/10" : "text-foreground/80 hover:text-accent hover:bg-primary/10";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -19447,20 +19307,36 @@ function PageNavbar() {
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex items-center gap-1", children: [
-            primaryNavLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                type: "button",
-                onClick: () => navigate(link.to),
-                "data-ocid": ocidFor(link.label),
-                className: `px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
-                  link,
-                  currentPath === link.to
-                )}`,
-                children: link.label
-              },
-              link.to
-            )),
+            primaryNavLinks.map(
+              (link) => link.external ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "a",
+                {
+                  href: link.to,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  "data-ocid": ocidFor(link.label),
+                  className: `px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+                    link,
+                    false
+                  )}`,
+                  children: link.label
+                },
+                link.to
+              ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => handleLink(link),
+                  "data-ocid": ocidFor(link.label),
+                  className: `px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+                    link,
+                    currentPath === link.to
+                  )}`,
+                  children: link.label
+                },
+                link.to
+              )
+            ),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", "data-more-menu": true, children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "button",
@@ -19530,20 +19406,36 @@ function PageNavbar() {
             "data-mobile-menu": true,
             className: `md:hidden backdrop-frosted border-t border-border/40 px-4 pb-4 overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-screen opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`,
             children: [
-              mobileNavLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => navigate(link.to),
-                  "data-ocid": ocidFor(link.label, "mobile_link"),
-                  className: `block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
-                    link,
-                    currentPath === link.to
-                  )}`,
-                  children: link.label
-                },
-                link.to
-              )),
+              mobileNavLinks.map(
+                (link) => link.external ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "a",
+                  {
+                    href: link.to,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    "data-ocid": ocidFor(link.label, "mobile_link"),
+                    className: `block w-full px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+                      link,
+                      false
+                    )}`,
+                    children: link.label
+                  },
+                  link.to
+                ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => handleLink(link),
+                    "data-ocid": ocidFor(link.label, "mobile_link"),
+                    className: `block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+                      link,
+                      currentPath === link.to
+                    )}`,
+                    children: link.label
+                  },
+                  link.to
+                )
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "a",
                 {
@@ -19653,7 +19545,7 @@ function Footer() {
                 {
                   className: "text-sm max-w-xs leading-relaxed mb-5",
                   style: { color: "oklch(0.5 0.02 60)" },
-                  children: "Bijnor's most trusted physics coaching institute. Transforming students into NEET & JEE toppers for over 10 years."
+                  children: "Bijnor's most trusted physics coaching institute. Transforming students into NEET & JEE toppers for over 14+ years."
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
@@ -19750,6 +19642,15 @@ function Footer() {
                         className: "mt-3 block font-bold text-sm transition-smooth hover:scale-105",
                         style: { color: "oklch(0.85 0.12 80)" },
                         children: "📞 09897085277"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "a",
+                      {
+                        href: "tel:9634429377",
+                        className: "mt-1 block text-xs transition-smooth hover:scale-105",
+                        style: { color: "oklch(0.6 0.02 60)" },
+                        children: "📞 Mr. Nitish Verma: 9634429377"
                       }
                     ),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1", children: "⏰ Mon–Sat: 7AM – 8PM" })
@@ -27998,7 +27899,7 @@ const milestones = [
   {
     year: "2019",
     title: "Batch Expansion",
-    desc: "Expanded to dedicated batches for Class 11, Class 12, NEET, and JEE, serving 200+ students annually."
+    desc: "Expanded to dedicated batches for Class 11, Class 12, NEET, and JEE, growing our student community across Bijnor."
   },
   {
     year: "2022",
@@ -28035,7 +27936,7 @@ const values = [
 ];
 const qualifications = [
   { icon: GraduationCap, label: "B.Tech (Physics & Engineering)" },
-  { icon: BookOpen, label: "10+ Years Teaching Experience" },
+  { icon: BookOpen, label: "14+ Years Teaching Experience" },
   { icon: Award, label: "500+ NEET/JEE Qualified Students" },
   { icon: Atom, label: "Specialized in Modern Physics & Electrodynamics" }
 ];
@@ -28124,12 +28025,13 @@ function AboutPage() {
           transition: { duration: 0.7 },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-accent font-semibold text-sm tracking-widest uppercase mb-3", children: "Meet the Educator" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-3xl md:text-4xl text-foreground mb-6", children: "Er. Pooja Verma" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-3xl md:text-4xl text-foreground mb-2", children: "Er. Pooja Verma" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-accent font-semibold text-sm mb-6", children: "M.Tech, B.Tech, B.Ed." }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-muted-foreground text-base leading-relaxed", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
                 "Er. Pooja Verma is one of India's most dedicated physics educators, with over",
                 " ",
-                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-foreground", children: "10 years of teaching experience" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-foreground", children: "14+ years of teaching experience" }),
                 " ",
                 "at the highest competitive exam levels. Her B.Tech background in Physics and Engineering gives her a unique edge."
               ] }),
@@ -28176,8 +28078,8 @@ function AboutPage() {
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-8", children: [
-              { num: "500+", label: "NEET/JEE Toppers" },
-              { num: "10+", label: "Years of Excellence" },
+              { num: "1400+", label: "Happy Students" },
+              { num: "14+", label: "Years of Excellence" },
               { num: "98%", label: "Success Rate" },
               { num: "4", label: "Expert Courses" }
             ].map((s) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center", children: [
@@ -28481,6 +28383,12 @@ const courses$1 = [
     title: "Class 11",
     desc: "Foundation in mechanics, thermodynamics & waves",
     icon: "⚡"
+  },
+  {
+    id: "class11-chemistry",
+    title: "Class 11 Chemistry",
+    desc: "Foundation in physical, organic & inorganic chemistry",
+    icon: "⚗️"
   },
   {
     id: "class12",
@@ -31648,6 +31556,12 @@ Message: ${form.message}`
   const infoItems = [
     { icon: Phone, label: "Call / WhatsApp", value: "09897085277", gold: true },
     {
+      icon: Phone,
+      label: "Alt. Contact — Mr. Nitish Verma",
+      value: "9634429377",
+      gold: false
+    },
+    {
       icon: MapPin,
       label: "Address",
       value: "Surendra Nagar, near Shiv Mandir, Aawas Vikas, Bijnor, UP 246701",
@@ -31978,6 +31892,7 @@ Message: ${form.message}`
                           children: [
                             /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "Select program..." }),
                             /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "Class 11 Physics", children: "Class 11 Physics" }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "Class 11 Chemistry", children: "Class 11 Chemistry" }),
                             /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "Class 12 Physics", children: "Class 12 Physics" }),
                             /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "NEET Physics", children: "NEET Physics" }),
                             /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "JEE Physics", children: "JEE Physics (Mains + Advanced)" })
@@ -32439,7 +32354,7 @@ const faqs = [
   },
   {
     q: "How many toppers has Medhavi produced?",
-    a: "Over 10+ years, Medhavi Physics Classes has produced 500+ toppers across NEET, JEE, and Class 12 Boards. Many of our alumni are now doctors, engineers, and IITians contributing to society."
+    a: "Over 14+ years, Medhavi Physics Classes has produced 500+ toppers across NEET, JEE, and Class 12 Boards. Many of our alumni are now doctors, engineers, and IITians contributing to society."
   },
   {
     q: "What makes Er. Pooja Verma's teaching unique?",
@@ -32613,275 +32528,6 @@ function FAQSection() {
           )
         ] })
       ]
-    }
-  );
-}
-const policyGroups = [
-  {
-    id: "fee-policy-one-time",
-    heading: "One-Time Payment",
-    accent: "gold",
-    icon: Wallet,
-    rules: [
-      {
-        id: "fee-policy.one_time.rebate",
-        icon: Percent,
-        title: "5% Rebate on Full Payment",
-        desc: "Pay the entire course fee in a single installment and receive a 5% rebate, capped at a maximum of Rs 8,000."
-      },
-      {
-        id: "fee-policy.one_time.non_refundable",
-        icon: ShieldAlert,
-        title: "Non-Refundable",
-        desc: "The one-time payment, including the rebate availed, is non-refundable under any circumstances once admission is confirmed."
-      }
-    ]
-  },
-  {
-    id: "fee-policy-installment",
-    heading: "Installment Payment",
-    accent: "cyan",
-    icon: CalendarClock,
-    rules: [
-      {
-        id: "fee-policy.installment.split",
-        icon: CreditCard,
-        title: "50% · 30% · 20% Split",
-        desc: "Pay 50% of the total fee at the time of admission, 30% as the second installment, and the remaining 20% as the third installment."
-      },
-      {
-        id: "fee-policy.installment.cheques",
-        icon: Banknote,
-        title: "Post-Dated Cheques Within 120 Days",
-        desc: "Submit post-dated cheques for all installments within 120 days from the date of admission."
-      },
-      {
-        id: "fee-policy.installment.late_fee",
-        icon: TriangleAlert,
-        title: "Late Fee Rs 50/Day",
-        desc: "A late fee of Rs 50 per day applies for delayed installment payments, charged for up to 30 days."
-      },
-      {
-        id: "fee-policy.installment.cancellation",
-        icon: ShieldAlert,
-        title: "Admission Cancelled After 30 Days",
-        desc: "If the pending installment remains unpaid beyond 30 days, the admission stands cancelled automatically."
-      }
-    ]
-  },
-  {
-    id: "fee-policy-refund",
-    heading: "Refund Rules",
-    accent: "gold",
-    icon: RotateCcw,
-    rules: [
-      {
-        id: "fee-policy.refund.window",
-        icon: CalendarClock,
-        title: "Apply Within 15 Days",
-        desc: "Refund applications must be submitted within 15 days of the installment payment date to be considered valid."
-      },
-      {
-        id: "fee-policy.refund.deduction",
-        icon: Percent,
-        title: "25% Deductible (incl. GST 18%)",
-        desc: "A 25% deduction (inclusive of 18% GST) is applicable on the refundable amount as processing and administrative charges."
-      },
-      {
-        id: "fee-policy.refund.transfer",
-        icon: Landmark,
-        title: "NEFT / RTGS to Parent or Student Account",
-        desc: "Approved refunds are transferred via NEFT or RTGS directly to the bank account of the parent or student."
-      },
-      {
-        id: "fee-policy.refund.short_term",
-        icon: ShieldAlert,
-        title: "Short-Term Courses (< 4 Months) Non-Refundable",
-        desc: "Courses with a duration of less than 4 months are entirely non-refundable, regardless of the reason for withdrawal."
-      },
-      {
-        id: "fee-policy.refund.documents",
-        icon: FileText,
-        title: "Original Fee Receipt & Identity Card Required",
-        desc: "A refund application is accepted only when accompanied by the original fee receipt and the issued identity card."
-      },
-      {
-        id: "fee-policy.refund.no_verbal",
-        icon: TriangleAlert,
-        title: "No Verbal / Phone / Email / WhatsApp Requests",
-        desc: "Refund requests made verbally, over the phone, by email, or through WhatsApp will not be entertained under any circumstances."
-      }
-    ]
-  }
-];
-const accentStyles = {
-  gold: {
-    ring: "from-primary/20 via-transparent to-primary/5",
-    iconBg: "bg-primary/10 group-hover:bg-primary/20",
-    iconColor: "text-primary",
-    border: "oklch(0.72 0.16 80 / 0.18)",
-    glow: "hover:glow-gold"
-  },
-  cyan: {
-    ring: "from-accent/20 via-transparent to-accent/5",
-    iconBg: "bg-accent/10 group-hover:bg-accent/20",
-    iconColor: "text-accent",
-    border: "oklch(0.68 0.2 220 / 0.18)",
-    glow: "hover:glow-cyan"
-  }
-};
-function PolicyCard({
-  rule,
-  accent,
-  index: index2
-}) {
-  const Icon2 = rule.icon;
-  const styles = accentStyles[accent];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    motion.div,
-    {
-      initial: { opacity: 0, y: 24 },
-      whileInView: { opacity: 1, y: 0 },
-      viewport: { once: true },
-      transition: { delay: index2 * 0.08, duration: 0.5 },
-      "data-ocid": rule.id,
-      className: `glass-card rounded-2xl p-6 transition-smooth group ${styles.glow}`,
-      style: { border: `1px solid ${styles.border}` },
-      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-4", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: `w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-smooth ${styles.iconBg}`,
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `w-5 h-5 ${styles.iconColor}` })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-display font-bold text-foreground text-base mb-1.5 leading-snug", children: rule.title }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: rule.desc })
-        ] })
-      ] })
-    }
-  );
-}
-function FeePolicySection() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    SectionWrapper,
-    {
-      id: "fee-policy",
-      className: "py-20 px-4",
-      style: { background: "oklch(0.11 0.012 270)" },
-      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-6xl mx-auto", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center mb-14", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.p,
-            {
-              initial: { opacity: 0, y: 16 },
-              whileInView: { opacity: 1, y: 0 },
-              viewport: { once: true },
-              className: "text-primary font-display font-semibold text-sm tracking-widest uppercase mb-3",
-              children: "Transparent & Fair"
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion.h2,
-            {
-              initial: { opacity: 0, y: 24 },
-              whileInView: { opacity: 1, y: 0 },
-              viewport: { once: true },
-              transition: { delay: 0.05 },
-              className: "font-display font-black text-3xl md:text-5xl text-foreground mb-4 leading-tight",
-              children: [
-                "Fee",
-                " ",
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-gradient-to-r from-primary via-yellow-300 to-accent bg-clip-text text-transparent", children: "Policy" })
-              ]
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.p,
-            {
-              initial: { opacity: 0, y: 16 },
-              whileInView: { opacity: 1, y: 0 },
-              viewport: { once: true },
-              transition: { delay: 0.1 },
-              className: "text-muted-foreground max-w-2xl mx-auto text-base",
-              children: "Clear rules for payment options and refunds — so you always know exactly what to expect when you enroll at Medhavi Physics Classes."
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-12", children: policyGroups.map((group, gi) => {
-          const GroupIcon = group.icon;
-          const styles = accentStyles[group.accent];
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { "data-ocid": `${group.id}.section`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              motion.div,
-              {
-                initial: { opacity: 0, x: -24 },
-                whileInView: { opacity: 1, x: 0 },
-                viewport: { once: true },
-                transition: { delay: gi * 0.05 },
-                className: "flex items-center gap-4 mb-6",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "div",
-                    {
-                      className: `w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 ${styles.iconBg}`,
-                      style: { border: `1px solid ${styles.border}` },
-                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(GroupIcon, { className: `w-6 h-6 ${styles.iconColor}` })
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-bold text-foreground text-xl md:text-2xl leading-tight", children: group.heading }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "div",
-                      {
-                        className: "mt-1.5 h-0.5 w-20 rounded-full",
-                        style: {
-                          background: group.accent === "gold" ? "linear-gradient(90deg, oklch(0.72 0.16 80 / 0.7), transparent)" : "linear-gradient(90deg, oklch(0.68 0.2 220 / 0.7), transparent)"
-                        }
-                      }
-                    )
-                  ] })
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5",
-                "data-ocid": `${group.id}.list`,
-                children: group.rules.map((rule, ri) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  PolicyCard,
-                  {
-                    rule,
-                    accent: group.accent,
-                    index: ri
-                  },
-                  rule.id
-                ))
-              }
-            )
-          ] }, group.id);
-        }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            initial: { opacity: 0, y: 20 },
-            whileInView: { opacity: 1, y: 0 },
-            viewport: { once: true },
-            className: "mt-14 flex items-start gap-3 max-w-3xl mx-auto glass-card rounded-2xl p-5",
-            style: { border: "1px solid oklch(0.72 0.16 80 / 0.18)" },
-            "data-ocid": "fee-policy.note",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Receipt, { className: "w-5 h-5 shrink-0 mt-0.5 text-primary" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-muted-foreground text-sm leading-relaxed", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground font-semibold", children: "Note:" }),
-                " All fee-related decisions are made at the discretion of Medhavi Physics Classes management. For any clarification regarding payments or refunds, please contact the office in person during working hours."
-              ] })
-            ]
-          }
-        )
-      ] })
     }
   );
 }
@@ -85799,9 +85445,9 @@ function PhysicsQuoteCarousel() {
 }
 const stats$2 = [
   { value: 500, suffix: "+", label: "Toppers" },
-  { value: 10, suffix: "+", label: "Years Exp." },
+  { value: 14, suffix: "+", label: "Years Exp." },
   { value: 98, suffix: "%", label: "Success Rate" },
-  { value: 2e3, suffix: "+", label: "Students" }
+  { value: 1400, suffix: "+", label: "Happy Students" }
 ];
 function HeroSection() {
   const scrollToContact = () => {
@@ -85948,7 +85594,7 @@ function HeroSection() {
               {
                 className: "text-sm mb-2 max-w-lg leading-relaxed",
                 style: { color: "oklch(0.75 0.02 60)" },
-                children: "Engineer-turned-mentor with 10+ years transforming Bijnor's brightest minds into national-level toppers."
+                children: "Engineer-turned-mentor with 14+ years transforming Bijnor's brightest minds into national-level toppers."
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -86060,7 +85706,7 @@ function HeroSection() {
                           {
                             className: "text-xs",
                             style: { color: "oklch(0.72 0.16 80)" },
-                            children: "M.Tech | Physics Expert | 10+ Yrs"
+                            children: "M.Tech | Physics Expert | 14+ Yrs"
                           }
                         )
                       ]
@@ -87209,9 +86855,8 @@ const toppers$1 = [
 const years = ["All", "2024", "2023", "2022", "2021"];
 const stats$1 = [
   { label: "Students Qualified", value: "500+", icon: Users },
-  { label: "Top 100 AIR Ranks", value: "28+", icon: Trophy },
   { label: "Success Rate", value: "98%", icon: TrendingUp },
-  { label: "Years of Results", value: "10+", icon: Award }
+  { label: "Years of Results", value: "14+", icon: Award }
 ];
 function ResultsPage() {
   const [activeYear, setActiveYear] = reactExports.useState("All");
@@ -87286,7 +86931,7 @@ function ResultsPage() {
       {
         className: "py-16 px-4",
         style: { background: "oklch(0.11 0.012 270)" },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6", children: stats$1.map((s, i2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6", children: stats$1.map((s, i2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
           motion.div,
           {
             initial: { opacity: 0, y: 30 },
@@ -88324,11 +87969,9 @@ function BadgePill({ text, icon }) {
 }
 const stats = [
   { value: 500, suffix: "+", label: "Toppers Produced", icon: "🏆" },
-  { value: 10, suffix: "+", label: "Years of Excellence", icon: "⭐" },
+  { value: 14, suffix: "+", label: "Years of Excellence", icon: "⭐" },
   { value: 98, suffix: "%", label: "Success Rate", icon: "📈" },
-  { value: 50, suffix: "+", label: "AIR Ranks Secured", icon: "🎯" },
-  { value: 5, suffix: "x", label: "Top 100 NEET Streak", icon: "🔥" },
-  { value: 1e3, suffix: "+", label: "Students Mentored", icon: "👩‍🎓" }
+  { value: 1400, suffix: "+", label: "Happy Students", icon: "👩‍🎓" }
 ];
 const toppers = [
   {
@@ -88371,14 +88014,12 @@ const toppers = [
 const marqueeItems = [
   "🏆 500+ Toppers",
   "🎯 AIR 156 in NEET",
-  "⭐ 10+ Years of Excellence",
+  "⭐ 14+ Years of Excellence",
   "📈 98% Success Rate",
-  "🔥 Top 100 NEET — 5 Years Running",
-  "👩‍🎓 1000+ Students Mentored",
+  "👩‍🎓 1400+ Happy Students",
   "🥇 JEE Advanced Qualifiers Every Batch",
   "💡 99.2%ile in JEE Mains",
-  "🌟 Best Physics Faculty Award",
-  "🏅 50+ AIR Ranks in NEET"
+  "🌟 Best Physics Faculty Award"
 ];
 const ringConfig = [
   { pos: [-6, 3, -3], col: "#D4AF37", spd: 0.4 },
@@ -88519,7 +88160,7 @@ function ToppersSection() {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
-                  className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-16",
+                  className: "grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16",
                   "data-ocid": "toppers.stats.list",
                   children: stats.map((s, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                     StatCard,
@@ -88600,7 +88241,6 @@ function ToppersSection() {
                   className: "flex flex-wrap justify-center gap-3 mt-8",
                   "data-ocid": "toppers.badges",
                   children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(BadgePill, { icon: "🥇", text: "NEET Top 100 — 5 Consecutive Years" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(BadgePill, { icon: "📚", text: "Best Physics Faculty — Bijnor District" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(BadgePill, { icon: "🎓", text: "JEE Advanced Qualifiers Every Batch" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(BadgePill, { icon: "⚡", text: "India's Most Dedicated Physics Tutor" }),
@@ -88664,7 +88304,7 @@ const reasons = [
   },
   {
     icon: Star,
-    title: "10+ Years of Excellence",
+    title: "14+ Years of Excellence",
     desc: "Over a decade of transforming average students into confident achievers. Our track record speaks — Medhavi is Bijnor's most trusted physics institute."
   },
   {
@@ -88900,7 +88540,7 @@ function WhyChooseUsSection() {
                       {
                         className: "text-5xl font-display font-black mb-2 leading-none",
                         style: { color: "oklch(0.85 0.12 80)" },
-                        children: "10+"
+                        children: "14+"
                       }
                     ),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm", style: { color: "oklch(0.65 0.02 60)" }, children: "Years of Excellence" })
@@ -89049,7 +88689,6 @@ function HomePage() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(PageNavbar, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSection, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(WhyChooseUsSection, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(FeePolicySection, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ServicesSection, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ToppersSection, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ReviewsSection, {}),

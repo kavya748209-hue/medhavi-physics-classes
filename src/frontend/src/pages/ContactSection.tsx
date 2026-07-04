@@ -24,6 +24,12 @@ export function ContactSection() {
   const infoItems = [
     { icon: Phone, label: "Call / WhatsApp", value: "09897085277", gold: true },
     {
+      icon: Phone,
+      label: "Alt. Contact — Mr. Nitish Verma",
+      value: "9634429377",
+      gold: false,
+    },
+    {
       icon: MapPin,
       label: "Address",
       value: "Surendra Nagar, near Shiv Mandir, Aawas Vikas, Bijnor, UP 246701",
@@ -328,6 +334,7 @@ export function ContactSection() {
                 >
                   <option value="">Select program...</option>
                   <option value="Class 11 Physics">Class 11 Physics</option>
+                  <option value="Class 11 Chemistry">Class 11 Chemistry</option>
                   <option value="Class 12 Physics">Class 12 Physics</option>
                   <option value="NEET Physics">NEET Physics</option>
                   <option value="JEE Physics">

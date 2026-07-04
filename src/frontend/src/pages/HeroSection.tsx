@@ -290,9 +290,9 @@ function PhysicsQuoteCarousel() {
 // ─── Stats ────────────────────────────────────────────────────────────────────
 const stats = [
   { value: 500, suffix: "+", label: "Toppers" },
-  { value: 10, suffix: "+", label: "Years Exp." },
+  { value: 14, suffix: "+", label: "Years Exp." },
   { value: 98, suffix: "%", label: "Success Rate" },
-  { value: 2000, suffix: "+", label: "Students" },
+  { value: 1400, suffix: "+", label: "Happy Students" },
 ];
 
 // ─── Hero Section ─────────────────────────────────────────────────────────────
@@ -550,7 +550,7 @@ export function HeroSection() {
                     boxShadow: "0 0 20px oklch(0.72 0.16 80 / 0.5)",
                   }}
                 >
-                  1500+ Toppers 🏆
+                  500+ Toppers 🏆
                 </div>
                 <div
                   className="absolute -bottom-5 -left-5 px-3 py-2 rounded-xl text-xs font-bold animate-float z-20"

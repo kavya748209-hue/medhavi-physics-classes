@@ -5,7 +5,6 @@ import AdmissionPage from "@/pages/AdmissionPage";
 import { ContactSection } from "@/pages/ContactSection";
 import CoursesPage from "@/pages/CoursesPage";
 import { FAQSection } from "@/pages/FAQSection";
-import { FeePolicySection } from "@/pages/FeePolicySection";
 import { Footer } from "@/pages/Footer";
 import GalleryPage from "@/pages/GalleryPage";
 import { GallerySection } from "@/pages/GallerySection";
@@ -25,7 +24,6 @@ function HomePage() {
       <PageNavbar />
       <HeroSection />
       <WhyChooseUsSection />
-      <FeePolicySection />
       <ServicesSection />
       <ToppersSection />
       <ReviewsSection />

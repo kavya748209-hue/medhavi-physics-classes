@@ -186,7 +186,7 @@ export function Footer() {
             reserved.
           </p>
           <p className="text-xs" style={{ color: "oklch(0.35 0.01 60)" }}>
-            @ Medhavi Physics Classes {" "}
+            Built with love using{" "}
             <a
               href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
               target="_blank"
@@ -202,7 +202,7 @@ export function Footer() {
                   "oklch(0.5 0.02 60)";
               }}
             >
-              
+              caffeine.ai
             </a>
           </p>
         </div>

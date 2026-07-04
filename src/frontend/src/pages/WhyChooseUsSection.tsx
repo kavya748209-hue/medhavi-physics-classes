@@ -230,7 +230,7 @@ export function WhyChooseUsSection() {
                 {r.title}
               </h3>
               <p
-                className="text-xs leading-relaxed"
+                className="text-xs font-semibold leading-relaxed"
                 style={{ color: "oklch(0.62 0.02 60)" }}
               >
                 {r.desc}
@@ -250,13 +250,6 @@ export function WhyChooseUsSection() {
               "0 0 80px oklch(0.72 0.16 80 / 0.12), inset 0 0 40px oklch(0.72 0.16 80 / 0.05)",
           }}
         >
-          <div
-            className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none"
-            style={{
-              background: "oklch(0.72 0.16 80 / 0.08)",
-              filter: "blur(60px)",
-            }}
-          />
           <div
             className="absolute bottom-0 left-0 w-48 h-48 rounded-full pointer-events-none"
             style={{
@@ -331,6 +324,82 @@ export function WhyChooseUsSection() {
                 </span>
               </blockquote>
             </div>
+          </div>
+        </div>
+
+        {/* Legacy of Excellence Highlight Banner */}
+        <div
+          data-ocid="why.legacy_banner"
+          className="mt-10 rounded-3xl p-8 lg:p-14 relative overflow-hidden animate-glow-pulse"
+          style={{
+            background:
+              "linear-gradient(120deg, oklch(0.72 0.16 80 / 0.18), oklch(0.18 0.02 270 / 0.9), oklch(0.68 0.2 220 / 0.14))",
+            border: "1px solid oklch(0.72 0.16 80 / 0.55)",
+            boxShadow:
+              "0 0 100px oklch(0.72 0.16 80 / 0.25), inset 0 0 60px oklch(0.72 0.16 80 / 0.08)",
+          }}
+        >
+          <div
+            className="absolute -top-10 -left-10 w-72 h-72 rounded-full pointer-events-none"
+            style={{
+              background: "oklch(0.72 0.16 80 / 0.18)",
+              filter: "blur(70px)",
+            }}
+          />
+          <div
+            className="absolute -bottom-10 -right-10 w-72 h-72 rounded-full pointer-events-none"
+            style={{
+              background: "oklch(0.68 0.2 220 / 0.18)",
+              filter: "blur(70px)",
+            }}
+          />
+          <div className="relative z-10 flex flex-col items-center text-center gap-4">
+            <span
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.2em]"
+              style={{
+                background: "oklch(0.72 0.16 80 / 0.2)",
+                border: "1px solid oklch(0.72 0.16 80 / 0.5)",
+                color: "oklch(0.9 0.1 80)",
+              }}
+            >
+              <Sparkles className="w-3.5 h-3.5" />A Legacy of Excellence
+            </span>
+            <blockquote
+              className="font-display font-bold text-xl sm:text-2xl lg:text-3xl leading-snug max-w-4xl"
+              style={{
+                color: "oklch(0.95 0.04 60)",
+                textShadow: "0 2px 20px oklch(0.72 0.16 80 / 0.3)",
+              }}
+            >
+              <span
+                className="text-5xl font-display leading-none align-top mr-1"
+                style={{ color: "oklch(0.72 0.16 80 / 0.6)" }}
+              >
+                &#8220;
+              </span>
+              No Compartment Results in 14 Consecutive Years. Even an average
+              student scores 70%+ with our structured guidance and personalized
+              mentoring.
+              <span
+                className="text-5xl font-display leading-none align-bottom ml-1"
+                style={{ color: "oklch(0.72 0.16 80 / 0.6)" }}
+              >
+                &#8221;
+              </span>
+            </blockquote>
+            <div
+              className="h-px w-24"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent, oklch(0.72 0.16 80 / 0.6), transparent)",
+              }}
+            />
+            <span
+              className="text-xs font-semibold uppercase tracking-[0.25em]"
+              style={{ color: "oklch(0.85 0.12 80)" }}
+            >
+              Medhavi Physics Classes &middot; Bijnor
+            </span>
           </div>
         </div>
       </div>

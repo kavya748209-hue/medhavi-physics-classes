@@ -5,6 +5,7 @@ import AdmissionPage from "@/pages/AdmissionPage";
 import { ContactSection } from "@/pages/ContactSection";
 import CoursesPage from "@/pages/CoursesPage";
 import { FAQSection } from "@/pages/FAQSection";
+import { FeePolicySection } from "@/pages/FeePolicySection";
 import { Footer } from "@/pages/Footer";
 import GalleryPage from "@/pages/GalleryPage";
 import { GallerySection } from "@/pages/GallerySection";
@@ -14,7 +15,6 @@ import PhysicsTipsPage from "@/pages/PhysicsTipsPage";
 import ResultsPage from "@/pages/ResultsPage";
 import { ReviewsSection } from "@/pages/ReviewsSection";
 import { ServicesSection } from "@/pages/ServicesSection";
-import StudyMaterialsPage from "@/pages/StudyMaterialsPage";
 import { ToppersSection } from "@/pages/ToppersSection";
 import { WhyChooseUsSection } from "@/pages/WhyChooseUsSection";
 import { useEffect, useState } from "react";
@@ -25,6 +25,7 @@ function HomePage() {
       <PageNavbar />
       <HeroSection />
       <WhyChooseUsSection />
+      <FeePolicySection />
       <ServicesSection />
       <ToppersSection />
       <ReviewsSection />
@@ -42,7 +43,6 @@ function getPage(pathname: string) {
   if (pathname.startsWith("/about")) return "about";
   if (pathname.startsWith("/courses")) return "courses";
   if (pathname.startsWith("/results")) return "results";
-  if (pathname.startsWith("/study-materials")) return "study-materials";
   if (pathname.startsWith("/gallery")) return "gallery";
   if (pathname.startsWith("/physics-tips")) return "physics-tips";
   if (pathname.startsWith("/admission")) return "admission";
@@ -72,7 +72,6 @@ export default function App() {
   if (page === "about") return <AboutPage />;
   if (page === "courses") return <CoursesPage />;
   if (page === "results") return <ResultsPage />;
-  if (page === "study-materials") return <StudyMaterialsPage />;
   if (page === "gallery") return <GalleryPage />;
   if (page === "physics-tips") return <PhysicsTipsPage />;
   if (page === "admission") return <AdmissionPage />;

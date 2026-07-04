@@ -1,24 +1,46 @@
-import { Atom, ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 type NavWindow = Window & { __navigateTo?: (path: string) => void };
 
-const primaryNavLinks = [
+type NavLink = {
+  label: string;
+  to: string;
+  highlight?: boolean;
+};
+
+// Desktop primary row — Admission upfront, Contact last.
+const primaryNavLinks: NavLink[] = [
   { label: "Home", to: "/" },
+  { label: "Admission", to: "/admission" },
   { label: "About", to: "/about" },
   { label: "Courses", to: "/courses" },
   { label: "Results", to: "/results" },
   { label: "Gallery", to: "/gallery", highlight: true },
-];
-
-const moreNavLinks = [
-  { label: "Study Materials", to: "/study-materials" },
+  { label: "Fee Policy", to: "/#fee-policy" },
   { label: "Contact", to: "/#contact" },
-  { label: "Physics Tips", to: "/physics-tips" },
-  { label: "Admission", to: "/admission" },
 ];
 
-const allMobileLinks = [...primaryNavLinks, ...moreNavLinks];
+// "More" dropdown — only Physics Tips remains.
+const moreNavLinks: NavLink[] = [
+  { label: "Physics Tips", to: "/physics-tips" },
+];
+
+// Mobile order — Physics Tips before Contact (Contact last).
+const mobileNavLinks: NavLink[] = [
+  { label: "Home", to: "/" },
+  { label: "Admission", to: "/admission" },
+  { label: "About", to: "/about" },
+  { label: "Courses", to: "/courses" },
+  { label: "Results", to: "/results" },
+  { label: "Gallery", to: "/gallery", highlight: true },
+  { label: "Fee Policy", to: "/#fee-policy" },
+  { label: "Physics Tips", to: "/physics-tips" },
+  { label: "Contact", to: "/#contact" },
+];
+
+const ocidFor = (label: string, suffix = "link") =>
+  `navbar.${label.toLowerCase().replace(/ /g, "_")}_${suffix}`;
 
 export function PageNavbar() {
   const [open, setOpen] = useState(false);
@@ -92,6 +114,15 @@ export function PageNavbar() {
 
   const isMoreActive = moreNavLinks.some((l) => currentPath === l.to);
 
+  const renderLinkClass = (link: NavLink, active: boolean) =>
+    link.highlight
+      ? active
+        ? "text-primary bg-primary/20 ring-1 ring-primary/60 font-semibold"
+        : "text-primary bg-primary/10 ring-1 ring-primary/30 font-semibold hover:bg-primary/20 hover:ring-primary/60"
+      : active
+        ? "text-accent bg-primary/10"
+        : "text-foreground/80 hover:text-accent hover:bg-primary/10";
+
   return (
     <nav
       data-ocid="navbar"
@@ -108,10 +139,14 @@ export function PageNavbar() {
             type="button"
             onClick={() => navigate("/")}
             data-ocid="navbar.logo_button"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2.5 group"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-md transition-smooth group-hover:scale-110">
-              <Atom className="w-5 h-5 text-white" />
+            <div className="h-10 lg:h-12 w-10 lg:w-12 rounded-xl bg-white ring-1 ring-primary/30 shadow-md overflow-hidden flex items-center justify-center transition-smooth group-hover:scale-105 group-hover:ring-primary/60">
+              <img
+                src="/assets/images/medhavi-logo.png"
+                alt="Medhavi Physics Classes logo"
+                className="h-full w-full object-contain"
+              />
             </div>
             <div className="text-left">
               <div className="font-display font-bold text-sm lg:text-base text-foreground leading-tight">
@@ -130,22 +165,17 @@ export function PageNavbar() {
                 key={link.to}
                 type="button"
                 onClick={() => navigate(link.to)}
-                data-ocid={`navbar.${link.label.toLowerCase().replace(/ /g, "_")}_link`}
-                className={`px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${
-                  link.highlight
-                    ? currentPath === link.to
-                      ? "text-primary bg-primary/20 ring-1 ring-primary/60 font-semibold"
-                      : "text-primary bg-primary/10 ring-1 ring-primary/30 font-semibold hover:bg-primary/20 hover:ring-primary/60"
-                    : currentPath === link.to
-                      ? "text-accent bg-primary/10"
-                      : "text-foreground/80 hover:text-accent hover:bg-primary/10"
-                }`}
+                data-ocid={ocidFor(link.label)}
+                className={`px-3 py-2 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+                  link,
+                  currentPath === link.to,
+                )}`}
               >
                 {link.label}
               </button>
             ))}
 
-            {/* More dropdown */}
+            {/* More dropdown — Physics Tips only */}
             <div className="relative" data-more-menu>
               <button
                 type="button"
@@ -175,7 +205,7 @@ export function PageNavbar() {
                       key={link.to}
                       type="button"
                       onClick={() => navigate(link.to)}
-                      data-ocid={`navbar.${link.label.toLowerCase().replace(/ /g, "_")}_link`}
+                      data-ocid={ocidFor(link.label)}
                       className={`block w-full text-left px-4 py-2.5 text-sm font-medium transition-smooth ${
                         currentPath === link.to
                           ? "text-accent bg-primary/10"
@@ -223,21 +253,16 @@ export function PageNavbar() {
             : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
-        {allMobileLinks.map((link) => (
+        {mobileNavLinks.map((link) => (
           <button
             key={link.to}
             type="button"
             onClick={() => navigate(link.to)}
-            data-ocid={`navbar.${link.label.toLowerCase().replace(/ /g, "_")}_mobile_link`}
-            className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${
-              "highlight" in link && link.highlight
-                ? currentPath === link.to
-                  ? "text-primary bg-primary/20 ring-1 ring-primary/40 font-semibold"
-                  : "text-primary font-semibold hover:bg-primary/15"
-                : currentPath === link.to
-                  ? "text-accent bg-primary/10"
-                  : "text-foreground/80 hover:text-accent hover:bg-primary/10"
-            }`}
+            data-ocid={ocidFor(link.label, "mobile_link")}
+            className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-smooth ${renderLinkClass(
+              link,
+              currentPath === link.to,
+            )}`}
           >
             {link.label}
           </button>

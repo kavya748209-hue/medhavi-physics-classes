@@ -431,7 +431,7 @@ export function HeroSection() {
                 className="text-sm mb-2 max-w-lg leading-relaxed"
                 style={{ color: "oklch(0.75 0.02 60)" }}
               >
-                Engineer-turned-mentor with 10+ years transforming Bijnor's
+                Engineer-turned-mentor with 14+ years transforming Bijnor's
                 brightest minds into national-level toppers.
               </p>
               <p
@@ -535,7 +535,7 @@ export function HeroSection() {
                       className="text-xs"
                       style={{ color: "oklch(0.72 0.16 80)" }}
                     >
-                      M.Tech | Physics Expert | 10+ Yrs
+                      M.Tech | Physics Expert | 14+ Yrs
                     </div>
                   </div>
                 </div>
@@ -550,7 +550,7 @@ export function HeroSection() {
                     boxShadow: "0 0 20px oklch(0.72 0.16 80 / 0.5)",
                   }}
                 >
-                  500+ Toppers 🏆
+                  1500+ Toppers 🏆
                 </div>
                 <div
                   className="absolute -bottom-5 -left-5 px-3 py-2 rounded-xl text-xs font-bold animate-float z-20"

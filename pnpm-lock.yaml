@@ -169,8 +169,8 @@ importers:
         specifier: ~19.1.8
         version: 19.1.8(react@19.1.8)
       react-hook-form:
-        specifier: ^7.80.0
-        version: 7.80.0(react@19.1.8)
+        specifier: ^7.81.0
+        version: 7.81.0(react@19.1.8)
       react-icons:
         specifier: ^5.7.0
         version: 5.7.0(react@19.1.8)
@@ -1818,8 +1818,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  baseline-browser-mapping@2.10.41:
-    resolution: {integrity: sha512-WwS7MHhqGHHlaVsqRZnhvCEMS0owDX+SxRlve7JkuH7My1Ara3ZriTmCQupPfYjxMZ8I/tgxtJYr2t7taHaH4A==}
+  baseline-browser-mapping@2.10.42:
+    resolution: {integrity: sha512-c/jurFrDLyui7o1J86yLkRu4LMsTYcBohveus7/I2Hzdn9KIP2bdJPTue/lR1KH46enoPbD77GKeSYNdyPoD3Q==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -2480,8 +2480,8 @@ packages:
     peerDependencies:
       react: ^19.1.8
 
-  react-hook-form@7.80.0:
-    resolution: {integrity: sha512-4P+fk6oXsxY+6xSj7Euhc2sumQD8zQqCuVHoJwoyp9EchP+IUW9OESB7uHFJOKsIBQ4MQqYE84INJFqUCYNoOg==}
+  react-hook-form@7.81.0:
+    resolution: {integrity: sha512-ocbmr2p5KBMoAfj4WCUvped33lVi1Kd5DuDUvQDnB6VEAacOjPI/jMbtDdbhco4y9ct4xUuCmMY0b/C9L0QHjw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -4440,7 +4440,7 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  baseline-browser-mapping@2.10.41: {}
+  baseline-browser-mapping@2.10.42: {}
 
   bidi-js@1.0.3:
     dependencies:
@@ -4454,7 +4454,7 @@ snapshots:
 
   browserslist@4.28.4:
     dependencies:
-      baseline-browser-mapping: 2.10.41
+      baseline-browser-mapping: 2.10.42
       caniuse-lite: 1.0.30001800
       electron-to-chromium: 1.5.387
       node-releases: 2.0.50
@@ -5016,7 +5016,7 @@ snapshots:
       react: 19.1.8
       scheduler: 0.26.0
 
-  react-hook-form@7.80.0(react@19.1.8):
+  react-hook-form@7.81.0(react@19.1.8):
     dependencies:
       react: 19.1.8
 

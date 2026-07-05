@@ -19175,6 +19175,7 @@ const __iconNode = [
 ];
 const Zap = createLucideIcon("zap", __iconNode);
 const FEE_POLICY_URL = "https://drive.google.com/file/d/1wQsT4ciVW8DeEd5gplpj9_NCtyYOlw6g/view";
+const STUDY_MATERIAL_URL = "https://drive.google.com/drive/folders/1XML6ia7mi-pr4aAHIcqiULqwMsQorQ4W";
 const primaryNavLinks = [
   { label: "Home", to: "/" },
   { label: "Admission", to: "/admission" },
@@ -19183,6 +19184,7 @@ const primaryNavLinks = [
   { label: "Results", to: "/results" },
   { label: "Gallery", to: "/gallery", highlight: true },
   { label: "Fee Policy", to: FEE_POLICY_URL, external: true },
+  { label: "Study Material", to: STUDY_MATERIAL_URL, external: true },
   { label: "Contact", to: "/#contact" }
 ];
 const moreNavLinks = [
@@ -19196,6 +19198,7 @@ const mobileNavLinks = [
   { label: "Results", to: "/results" },
   { label: "Gallery", to: "/gallery", highlight: true },
   { label: "Fee Policy", to: FEE_POLICY_URL, external: true },
+  { label: "Study Material", to: STUDY_MATERIAL_URL, external: true },
   { label: "Physics Tips", to: "/physics-tips" },
   { label: "Contact", to: "/#contact" }
 ];
@@ -87447,6 +87450,25 @@ const programs = [
       "Numerical mastery"
     ],
     subjects: ["Rotational", "SHM", "Optics", "Modern Physics"],
+    highlight: false
+  },
+  {
+    icon: Atom,
+    title: "Class 11 Chemistry",
+    badge: "Foundation",
+    desc: "Build strong fundamentals in Physical, Organic, and Inorganic Chemistry. CBSE & State Board aligned with deep conceptual clarity and reaction mastery.",
+    features: [
+      "Complete NCERT coverage",
+      "Weekly chapter tests",
+      "Reaction revision sheets",
+      "Doubt sessions daily"
+    ],
+    subjects: [
+      "Physical Chemistry",
+      "Organic Basics",
+      "Inorganic",
+      "Mole Concept"
+    ],
     highlight: false
   }
 ];

@@ -2,6 +2,7 @@ import { SectionWrapper } from "@/components/SectionWrapper";
 import { Float } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
+  Atom,
   BookOpen,
   Calculator,
   ChevronRight,
@@ -98,6 +99,25 @@ const programs = [
       "Numerical mastery",
     ],
     subjects: ["Rotational", "SHM", "Optics", "Modern Physics"],
+    highlight: false,
+  },
+  {
+    icon: Atom,
+    title: "Class 11 Chemistry",
+    badge: "Foundation",
+    desc: "Build strong fundamentals in Physical, Organic, and Inorganic Chemistry. CBSE & State Board aligned with deep conceptual clarity and reaction mastery.",
+    features: [
+      "Complete NCERT coverage",
+      "Weekly chapter tests",
+      "Reaction revision sheets",
+      "Doubt sessions daily",
+    ],
+    subjects: [
+      "Physical Chemistry",
+      "Organic Basics",
+      "Inorganic",
+      "Mole Concept",
+    ],
     highlight: false,
   },
 ];

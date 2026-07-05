@@ -13,6 +13,9 @@ type NavLink = {
 const FEE_POLICY_URL =
   "https://drive.google.com/file/d/1wQsT4ciVW8DeEd5gplpj9_NCtyYOlw6g/view";
 
+const STUDY_MATERIAL_URL =
+  "https://drive.google.com/drive/folders/1XML6ia7mi-pr4aAHIcqiULqwMsQorQ4W";
+
 // Desktop primary row — Admission upfront, Contact last.
 const primaryNavLinks: NavLink[] = [
   { label: "Home", to: "/" },
@@ -22,6 +25,7 @@ const primaryNavLinks: NavLink[] = [
   { label: "Results", to: "/results" },
   { label: "Gallery", to: "/gallery", highlight: true },
   { label: "Fee Policy", to: FEE_POLICY_URL, external: true },
+  { label: "Study Material", to: STUDY_MATERIAL_URL, external: true },
   { label: "Contact", to: "/#contact" },
 ];
 
@@ -39,6 +43,7 @@ const mobileNavLinks: NavLink[] = [
   { label: "Results", to: "/results" },
   { label: "Gallery", to: "/gallery", highlight: true },
   { label: "Fee Policy", to: FEE_POLICY_URL, external: true },
+  { label: "Study Material", to: STUDY_MATERIAL_URL, external: true },
   { label: "Physics Tips", to: "/physics-tips" },
   { label: "Contact", to: "/#contact" },
 ];

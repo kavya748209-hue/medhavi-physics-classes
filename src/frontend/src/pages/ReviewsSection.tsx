@@ -7,7 +7,7 @@ const reviews = [
     role: "MBBS Student • Fergana Medical Institute of Public Health",
     rating: 5,
     text: "My medical journey started with a strong foundation in Physics at Medhavi. Pooja Ma'am's teaching style made difficult numerical problems simple and boosted my confidence for NEET.",
-    emoji: "👩‍👦",
+    image: "/assets/reviews/hitesh-chaudhary.jpg",
   },
   {
     name: "Khushi Khan",

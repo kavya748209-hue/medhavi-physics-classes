@@ -254,17 +254,17 @@ const stats = [
 const toppers = [
   {
     name: "Hitesh Chaudhary",
-    rank: "MBBS Student • Fergana Medical Institute of Public Health",
-    year: "MBBS Student",
+    rank: "MBBS Student • Fergana Medical Institute of Public Health , Uzbekistan🇺🇿",
+    year: " Batch 2021 DDPS 94%",
     quote:
       "The Physics foundation I built at Medhavi continues to help me throughout my MBBS journey.",
   },
   {
-    name: "Khushi Khan",
-    rank: "School Topper 2026",
-    year: "School Topper 2026",
+    name: "Sana Khan",
+    rank: "MBBS Student",
+    year: "MBBS",
     quote:
-      "Pooja Ma'am transformed my fear of Physics into confidence. Every class brought me one step closer to my dream.",
+      "Hello everyone currently Iam studying in Venkateshwara institute of medical sciences Rajabpur Gajraula . Pooja Ma'am transformed my fear of Physics into confidence. Every class brought me one step closer to my dream.",
   },
   {
     name: "Tasmiya",

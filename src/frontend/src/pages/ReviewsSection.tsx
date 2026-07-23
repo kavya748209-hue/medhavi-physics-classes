@@ -3,10 +3,10 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Sunita Sharma",
-    role: "Parent of NEET qualifier, Meerut",
+    name: "Hitesh Chaudhary",
+    role: "MBBS Student • Fergana Medical Institute of Public Health",
     rating: 5,
-    text: "Er. Pooja Ma'am is truly exceptional. My son was struggling with Physics in Class 12, but after joining Medhavi, he scored 178/180 in NEET Physics. The personal attention each student gets here is unlike any other coaching center in the region.",
+    text: "My medical journey started with a strong foundation in Physics at Medhavi. Pooja Ma'am's teaching style made difficult numerical problems simple and boosted my confidence for NEET.",
     emoji: "👩‍👦",
   },
   {

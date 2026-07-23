@@ -17,7 +17,7 @@ const reviews = [
     emoji: "👨",
   },
   {
-    name: "Riya Sharma",
+    name: "Gunjan Khanna",
     role: "School Topper 2026 • Shikhar Shiksha Sadan",
     rating: 5,
     text: "The disciplined study schedule, weekly tests, and personal guidance at Medhavi Physics Classes helped me secure 91% in Class 12. I am grateful to Pooja Ma'am for always motivating me.",

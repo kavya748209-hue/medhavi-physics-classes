@@ -11,14 +11,14 @@ const reviews = [
   },
   {
     name: "Khushi Khan",
-    role: "Class 12 Topper • Raheemia Public School, Bijnor",
+    role: "Class 12 1st Topper • Raheemia Public School, Bijnor",
     rating: 5,
     text: "Pooja Ma'am made Physics my strongest subject. Her concept-based teaching and regular DPPs helped me score confidently in my board exams. Every doubt was cleared patiently, which made learning enjoyable.",
     emoji: "👨",
   },
   {
     name: "Gunjan Khanna",
-    role: "School Topper 2026 • Shikhar Shiksha Sadan",
+    role: "Shikhar shiksha sadan school topper 2026 batch 91%",
     rating: 5,
     text: "The disciplined study schedule, weekly tests, and personal guidance at Medhavi Physics Classes helped me secure 91% in Class 12. I am grateful to Pooja Ma'am for always motivating me.",
     emoji: "👧",

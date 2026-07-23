@@ -253,52 +253,52 @@ const stats = [
 
 const toppers = [
   {
-    name: "Aman Sharma",
-    rank: "AIR 247 — NEET 2024",
-    year: "NEET 2024",
+    name: "Hitesh Chaudhary",
+    rank: "MBBS Student • Fergana Medical Institute of Public Health",
+    year: "MBBS Student",
     quote:
-      "Physics became my strongest subject under Ma'am's guidance. Her way of breaking complex concepts into simple logic is truly unmatched.",
+      "The Physics foundation I built at Medhavi continues to help me throughout my MBBS journey.",
   },
   {
-    name: "Priya Singh",
-    rank: "99.2 Percentile — JEE Mains 2023",
-    year: "JEE 2023",
+    name: "Khushi Khan",
+    rank: "School Topper 2026",
+    year: "School Topper 2026",
     quote:
-      "Medhavi's structured DPP sheets and daily revision sessions gave me the edge I needed to crack JEE with a top percentile.",
+      "Pooja Ma'am transformed my fear of Physics into confidence. Every class brought me one step closer to my dream.",
   },
   {
-    name: "Rahul Verma",
-    rank: "AIR 156 — NEET 2023",
-    year: "NEET 2023",
+    name: "Tasmiya",
+    rank: "95.6%",
+    year: "95.6% • Batch 2021",
     quote:
-      "From an average student to AIR 156 — that journey happened because Pooja Ma'am believed in me before I believed in myself.",
+      "Discipline, consistency, and Pooja Ma'am's guidance helped me achieve 95.6% with confidence.",
   },
   {
-    name: "Sneha Agarwal",
-    rank: "Class 12 Board — 99/100 Physics",
-    year: "Boards 2024",
+    name: "Aastha Chaudhary",
+    rank: "MBBS Student",
+    year: "MBBS Student",
     quote:
-      "Scoring 100% in Physics felt like a distant dream until Medhavi showed me the systematic approach. The study material here is world-class.",
+      "Every doubt session and revision class at Medhavi played an important role in helping me reach MBBS.",
   },
   {
-    name: "Karan Mishra",
-    rank: "JEE Advanced Qualified 2023",
-    year: "JEE 2023",
+    name: "Tanya Chahal",
+    rank: "93.5% • Batch 2020",
+    year: "93.5% • Batch 2020",
     quote:
-      "The personal attention each student receives at Medhavi is something you won't find in any big coaching factory. It made all the difference.",
+      "The personal attention and systematic preparation helped me secure 93.5% in my board examinations.",
   },
   {
-    name: "Ritu Yadav",
-    rank: "AIR 1023 — NEET 2022",
-    year: "NEET 2022",
+    name: "Zoya Khan",
+    rank: "95.2%",
+    year: "Batch 2021",
     quote:
-      "Pooja Ma'am's passion for Physics is contagious. From fearing the subject to scoring 175/180 — Medhavi completely transformed me.",
+      "Pooja Ma'am believed in my potential even before I believed in myself. That made all the difference.",
   },
 ];
 
 const marqueeItems = [
   "🏆 500+ Toppers",
-  "🎯 AIR 156 in NEET",
+  "🎯 Ranks in NEET",
   "⭐ 14+ Years of Excellence",
   "📈 98% Success Rate",
   "👩‍🎓 1400+ Happy Students",

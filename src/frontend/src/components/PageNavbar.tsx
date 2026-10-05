@@ -11,7 +11,7 @@ type NavLink = {
 };
 
 const FEE_POLICY_URL =
-  "https://drive.google.com/file/d/1wQsT4ciVW8DeEd5gplpj9_NCtyYOlw6g/view";
+  "https://drive.google.com/drive/folders/17XLkFoAnKNi8GO3QzebzLn0ctyxBgldk";
 
 const STUDY_MATERIAL_URL =
   "https://drive.google.com/drive/folders/1XML6ia7mi-pr4aAHIcqiULqwMsQorQ4W";

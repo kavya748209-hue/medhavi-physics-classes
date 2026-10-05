@@ -172,7 +172,7 @@ export function PageNavbar() {
             </div>
             <div className="text-left">
               <div className="font-display font-bold text-sm lg:text-base text-foreground leading-tight">
-                Medhavi Physics
+                Medhavi Classes
               </div>
               <div className="text-[10px] text-muted-foreground font-medium tracking-wide">
                 Er. Pooja Verma
